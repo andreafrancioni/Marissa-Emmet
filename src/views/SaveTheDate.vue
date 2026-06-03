@@ -64,25 +64,25 @@ const goToRSVP = () => {
           <!-- Top Flap -->
           <div class="flap top">
             <svg
-              viewBox="0 0 320 180"
+              viewBox="0 0 360 180"
               class="flap-svg top-svg"
               preserveAspectRatio="none"
             >
               <!-- Outer shape -->
               <path
-                d="M 0 0 L 320 0 L 320 40 C 260 100, 220 160, 160 170 C 100 160, 60 100, 0 40 Z"
+                d="M 0 0 L 360 0 L 360 40 C 293 100, 248 160, 180 170 C 113 160, 68 100, 0 40 Z"
                 fill="var(--envelope-color)"
               />
               <!-- Outer solid gold line -->
               <path
-                d="M 8 0 L 8 38 C 65 95, 105 152, 160 162 C 215 152, 255 95, 312 38 L 312 0"
+                d="M 9 0 L 9 38 C 73 95, 118 152, 180 162 C 242 152, 287 95, 351 38 L 351 0"
                 fill="none"
                 stroke="var(--envelope-gold-color)"
                 stroke-width="1.5"
               />
               <!-- Inner dotted gold line -->
               <path
-                d="M 16 0 L 16 35 C 70 90, 110 145, 160 154 C 210 145, 250 90, 304 35 L 304 0"
+                d="M 18 0 L 18 35 C 79 90, 124 145, 180 154 C 236 145, 281 90, 342 35 L 342 0"
                 fill="none"
                 stroke="var(--envelope-gold-color)"
                 stroke-width="2"
@@ -95,19 +95,19 @@ const goToRSVP = () => {
           <!-- Front Face (Replaces Side/Bottom Flaps) -->
           <div class="flap front">
             <svg
-              viewBox="0 0 320 220"
+              viewBox="0 0 360 220"
               class="flap-svg front-svg"
               preserveAspectRatio="none"
             >
               <!-- Main shape -->
               <path
-                d="M 0 0 L 120 120 C 145 145, 175 145, 200 120 L 320 0 L 320 220 L 0 220 Z"
+                d="M 0 0 L 135 120 C 163 145, 197 145, 225 120 L 360 0 L 360 220 L 0 220 Z"
                 fill="var(--envelope-color)"
               />
 
               <!-- Flap seams -->
               <path
-                d="M 0 220 L 160 140 L 320 220"
+                d="M 0 220 L 180 140 L 360 220"
                 stroke="var(--envelope-seam-color)"
                 stroke-width="1"
                 fill="none"
@@ -115,13 +115,13 @@ const goToRSVP = () => {
 
               <!-- Bottom gold lines (matching the top flap style) -->
               <path
-                d="M 12 220 L 160 142 L 308 220"
+                d="M 14 220 L 180 142 L 347 220"
                 stroke="var(--envelope-gold-color)"
                 stroke-width="1.5"
                 fill="none"
               />
               <path
-                d="M 24 220 L 160 152 L 296 220"
+                d="M 27 220 L 180 152 L 333 220"
                 stroke="var(--envelope-gold-color)"
                 stroke-width="2"
                 stroke-dasharray="1,6"
@@ -131,7 +131,7 @@ const goToRSVP = () => {
 
               <!-- Slit -->
               <path
-                d="M 145 171 C 155 176, 165 176, 175 171"
+                d="M 163 171 C 174 176, 186 176, 197 171"
                 stroke="var(--envelope-slit-color)"
                 stroke-width="2"
                 fill="none"
@@ -194,11 +194,11 @@ const goToRSVP = () => {
 <style lang="scss" scoped>
 .save-the-date-container {
   /* --- Customizable Envelope Colors --- */
-  --envelope-color: #ddc0f2;
-  --envelope-inside-color: #cca4e6; /* Slightly darker for inside depth */
-  --envelope-seam-color: #b891c9; /* Darker for flap seams */
-  --envelope-slit-color: #9c73ae; /* Darkest for the slit shadow */
-  --envelope-gold-color: #e5c352; /* Gold detailing */
+  --envelope-color: #eadaf5;
+  --envelope-inside-color: #eadaf5a7; /* Slightly darker for inside depth */
+  --envelope-seam-color: #bda1c9; /* Darker for flap seams */
+  --envelope-slit-color: #a58eaf; /* Darkest for the slit shadow */
+  --envelope-gold-color: #d5b752; /* Gold detailing */
 
   position: fixed;
   top: 0;
@@ -248,7 +248,7 @@ const goToRSVP = () => {
 
 .envelope-wrapper {
   position: relative;
-  width: 320px;
+  width: 360px;
   height: 220px;
   background-color: var(--envelope-inside-color);
   cursor: pointer;
@@ -316,7 +316,7 @@ const goToRSVP = () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
+  width: 320px;
   height: 180px;
   background: white;
   z-index: 15;
