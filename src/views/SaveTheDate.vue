@@ -1,0 +1,486 @@
+<script setup>
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const videoRef = ref(null);
+const hasStarted = ref(false);
+const videoEnded = ref(false);
+
+const isOpen = ref(false);
+const isOut = ref(false);
+const isZooming = ref(false);
+const isFullScreen = ref(false);
+
+const openEnvelope = () => {
+  if (isOpen.value) return;
+
+  isOpen.value = true;
+
+  // Sequence the animation
+  setTimeout(() => {
+    isOut.value = true;
+    setTimeout(() => {
+      isZooming.value = true;
+      setTimeout(() => {
+        isFullScreen.value = true;
+        // Wait for the 2s fade-in transition before playing the video
+        setTimeout(() => {
+          startExperience();
+        }, 2000);
+      }, 2500); // Wait for the full 2.5s zooming animation
+    }, 1000); // Time for moving-up animation
+  }, 800); // Time for flap opening
+};
+
+const startExperience = () => {
+  hasStarted.value = true;
+  if (videoRef.value) {
+    videoRef.value.play();
+  }
+};
+
+const onVideoEnded = () => {
+  videoEnded.value = true;
+};
+
+const goToRSVP = () => {
+  router.push("/rsvp");
+};
+</script>
+
+<template>
+  <div class="save-the-date-container" :class="{ 'bg-black': hasStarted }">
+    <!-- 3D Envelope Experience -->
+    <div v-if="!videoEnded" class="envelope-scene">
+      <div class="glow-effect"></div>
+
+      <div
+        class="envelope-wrapper"
+        :class="{ 'is-open': isOpen, 'is-out': isOut }"
+        @click="openEnvelope"
+      >
+        <div class="envelope">
+          <!-- Top Flap -->
+          <div class="flap top">
+            <svg
+              viewBox="0 0 320 180"
+              class="flap-svg top-svg"
+              preserveAspectRatio="none"
+            >
+              <!-- Outer shape -->
+              <path
+                d="M 0 0 L 320 0 L 320 40 C 260 100, 220 160, 160 170 C 100 160, 60 100, 0 40 Z"
+                fill="var(--envelope-color)"
+              />
+              <!-- Outer solid gold line -->
+              <path
+                d="M 8 0 L 8 38 C 65 95, 105 152, 160 162 C 215 152, 255 95, 312 38 L 312 0"
+                fill="none"
+                stroke="var(--envelope-gold-color)"
+                stroke-width="1.5"
+              />
+              <!-- Inner dotted gold line -->
+              <path
+                d="M 16 0 L 16 35 C 70 90, 110 145, 160 154 C 210 145, 250 90, 304 35 L 304 0"
+                fill="none"
+                stroke="var(--envelope-gold-color)"
+                stroke-width="2"
+                stroke-dasharray="1,6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <!-- Front Face (Replaces Side/Bottom Flaps) -->
+          <div class="flap front">
+            <svg
+              viewBox="0 0 320 220"
+              class="flap-svg front-svg"
+              preserveAspectRatio="none"
+            >
+              <!-- Main shape -->
+              <path
+                d="M 0 0 L 120 120 C 145 145, 175 145, 200 120 L 320 0 L 320 220 L 0 220 Z"
+                fill="var(--envelope-color)"
+              />
+
+              <!-- Flap seams -->
+              <path
+                d="M 0 220 L 160 140 L 320 220"
+                stroke="var(--envelope-seam-color)"
+                stroke-width="1"
+                fill="none"
+              />
+
+              <!-- Bottom gold lines (matching the top flap style) -->
+              <path
+                d="M 12 220 L 160 142 L 308 220"
+                stroke="var(--envelope-gold-color)"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M 24 220 L 160 152 L 296 220"
+                stroke="var(--envelope-gold-color)"
+                stroke-width="2"
+                stroke-dasharray="1,6"
+                stroke-linecap="round"
+                fill="none"
+              />
+
+              <!-- Slit -->
+              <path
+                d="M 145 171 C 155 176, 165 176, 175 171"
+                stroke="var(--envelope-slit-color)"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <!-- The Letter -->
+          <div
+            class="letter"
+            :class="{ 'moving-up': isOut, zooming: isZooming }"
+          >
+            <div class="letter-content">
+              <div class="letter-header">
+                <span class="initials">M & E</span>
+              </div>
+              <div class="letter-body">
+                <p class="font-serif italic text-gray-400">Opening...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="instruction" v-if="!isOpen">TAP TO OPEN</div>
+    </div>
+
+    <!-- Full Screen Letter / Video Content -->
+    <Transition name="fade-video">
+      <div v-if="isFullScreen" class="full-screen-letter">
+        <video
+          ref="videoRef"
+          class="full-screen-video"
+          playsinline
+          @ended="onVideoEnded"
+        >
+          <source src="../assets/savethedatevideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- End State Overlay -->
+        <Transition name="fade">
+          <div v-if="videoEnded" class="end-overlay">
+            <div
+              class="text-center p-8 bg-black/40 backdrop-blur-md rounded-lg"
+            >
+              <h2 class="text-white text-4xl mb-8 handwriting">
+                We can't wait to celebrate with you
+              </h2>
+              <button @click="goToRSVP" class="rsvp-button">RSVP NOW</button>
+            </div>
+          </div>
+        </Transition>
+      </div>
+    </Transition>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.save-the-date-container {
+  /* --- Customizable Envelope Colors --- */
+  --envelope-color: #ddc0f2;
+  --envelope-inside-color: #cca4e6; /* Slightly darker for inside depth */
+  --envelope-seam-color: #b891c9; /* Darker for flap seams */
+  --envelope-slit-color: #9c73ae; /* Darkest for the slit shadow */
+  --envelope-gold-color: #e5c352; /* Gold detailing */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fffff0; // Deep dark background
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+  transition: background-color 1.5s ease;
+}
+
+.envelope-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease;
+
+  &.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.glow-effect {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(229, 195, 82, 0.12) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 1;
+  animation: pulse 5s infinite ease-in-out;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  background-color: var(--envelope-inside-color);
+  cursor: pointer;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(0, 0, 0, 0.05);
+  animation: float 6s infinite ease-in-out; // Slower floating
+
+  &:hover {
+    transform: scale(1.05) rotateX(10deg);
+  }
+
+  &.is-open {
+    animation: none;
+  }
+}
+
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flap {
+  position: absolute;
+  z-index: 20;
+}
+
+.flap.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  z-index: 40;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.is-open .flap.top {
+  transform: rotateX(180deg);
+  z-index: 10;
+}
+
+.flap.front {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 35;
+}
+
+.flap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 180px;
+  background: white;
+  z-index: 15;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  &.moving-up {
+    transform: translate(-50%, calc(-50% - 200px));
+  }
+
+  &.zooming {
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    transition:
+      width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
+      height 2.5s cubic-bezier(0.4, 0, 0.2, 1),
+      top 2.5s cubic-bezier(0.4, 0, 0.2, 1),
+      left 2.5s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.letter-content {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+.initials {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  border-bottom: 1px solid #e5c352;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  margin-top: 40px;
+  color: #e5c352;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  animation: fadeInOut 2s infinite ease-in-out;
+  z-index: 5;
+}
+
+// Full Screen Letter / Video
+.full-screen-letter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.full-screen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.end-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.rsvp-button {
+  padding: 1.25rem 3.5rem;
+  background-color: #e5c352;
+  color: white;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: white;
+    color: #3d3d3d;
+    transform: translateY(-2px);
+  }
+}
+
+.handwriting {
+  font-family: "Great Vibes", cursive;
+}
+
+// Animations
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Transition for video fading in
+.fade-video-enter-active {
+  transition: opacity 2s ease;
+}
+
+.fade-video-enter-from {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
