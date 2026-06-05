@@ -17,6 +17,19 @@ const openEnvelope = () => {
 
   isOpen.value = true;
 
+  // Unlock video on iOS/Safari synchronously with the user click
+  if (videoRef.value) {
+    videoRef.value.load();
+    const playPromise = videoRef.value.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        videoRef.value.pause();
+      }).catch((e) => {
+        console.warn("Video unlock failed:", e);
+      });
+    }
+  }
+
   // Sequence the animation
   setTimeout(() => {
     isOut.value = true;
@@ -159,7 +172,7 @@ const goToRSVP = () => {
 
     <!-- Full Screen Letter / Video Content -->
     <Transition name="fade-video">
-      <div v-if="isFullScreen" class="full-screen-letter">
+      <div v-show="isFullScreen" class="full-screen-letter">
         <video
           ref="videoRef"
           class="full-screen-video"

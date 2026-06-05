@@ -16,9 +16,9 @@
             Contact
           </p>
           <a
-            href="mailto:paulaandnikolaus@affresco.it"
+            href="mailto:emmetmarissa@affresco.it"
             class="text-lg font-serif hover:text-gray-500 transition-colors"
-            >paulaandnikolaus@affresco.it</a
+            >emmetmarissa@affresco.it</a
           >
         </div>
 

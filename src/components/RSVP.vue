@@ -964,9 +964,9 @@ const submitForm = async () => {
         >
           Need help?
           <a
-            href="mailto:PAULAANDNIKOLAUS@AFFRESCO.IT"
+            href="mailto:emmetmarissa@AFFRESCO.IT"
             class="underline hover:text-[#3D3D3D]"
-            >PAULAANDNIKOLAUS@AFFRESCO.IT</a
+            >emmetmarissa@AFFRESCO.IT</a
           >
         </p>
       </div>
