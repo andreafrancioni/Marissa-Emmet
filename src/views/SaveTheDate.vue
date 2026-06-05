@@ -148,7 +148,7 @@ const goToRSVP = () => {
             <img
               src="../assets/marissaemmetlogo.jpeg"
               class="letter-image"
-              alt="Marissa & Emmett Logo"
+              alt="Marissa & Emmet Logo"
             />
           </div>
         </div>
