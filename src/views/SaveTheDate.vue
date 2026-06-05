@@ -145,14 +145,11 @@ const goToRSVP = () => {
             class="letter"
             :class="{ 'moving-up': isOut, zooming: isZooming }"
           >
-            <div class="letter-content">
-              <div class="letter-header">
-                <span class="initials">M & E</span>
-              </div>
-              <div class="letter-body">
-                <p class="font-serif italic text-gray-400">Opening...</p>
-              </div>
-            </div>
+            <img
+              src="../assets/marissaemmetlogo.jpeg"
+              class="letter-image"
+              alt="Marissa & Emmett Logo"
+            />
           </div>
         </div>
       </div>
@@ -318,14 +315,14 @@ const goToRSVP = () => {
   transform: translate(-50%, -50%);
   width: 320px;
   height: 180px;
-  background: white;
+  background: #FBF3F8;
   z-index: 15;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
   &.moving-up {
@@ -350,19 +347,11 @@ const goToRSVP = () => {
   }
 }
 
-.letter-content {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  color: #333;
-}
-
-.initials {
-  font-size: 1.5rem;
-  letter-spacing: 0.2em;
-  border-bottom: 1px solid #e5c352;
-  padding-bottom: 5px;
-  display: inline-block;
-  margin-bottom: 10px;
+.letter-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .instruction {
