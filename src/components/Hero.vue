@@ -23,7 +23,7 @@
           <h2
             class="handwriting text-7xl md:text-9xl text-[#3D3D3D] mb-4 transform -rotate-1"
           >
-            Paula & Nikolaus
+            Emmet & Marissa
           </h2>
         </div>
 

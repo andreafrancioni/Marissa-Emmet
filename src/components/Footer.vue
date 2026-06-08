@@ -5,7 +5,7 @@
   >
     <div class="max-w-7xl mx-auto flex flex-col items-center gap-12">
       <h1 class="text-6xl text-center md:text-left text-[#3D3D3D]">
-        Paula & Nikolaus
+        Emmet & Marissa
       </h1>
 
       <div class="flex flex-col md:flex-row items-center gap-12 text-center">

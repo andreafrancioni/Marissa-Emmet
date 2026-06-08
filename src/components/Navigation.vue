@@ -38,7 +38,7 @@ const isMenuOpen = ref(false);
       <!-- Center Logo -->
       <div class="mx-4">
         <a href="#" class="flex flex-col items-center">
-          <h1 class="text-4xl md:text-5xl text-[#3D3D3D]">Paula & Nikolaus</h1>
+          <h1 class="text-4xl md:text-5xl text-[#3D3D3D]">Emmet & Marissa</h1>
         </a>
       </div>
 
@@ -115,7 +115,7 @@ const isMenuOpen = ref(false);
             >
               <span
                 class="handwriting text-5xl text-[#3D3D3D] leading-none transform -rotate-1"
-                >Paula & Nikolaus</span
+                >Emmet & Marissa</span
               >
             </a>
           </div>

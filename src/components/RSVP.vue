@@ -189,7 +189,7 @@ const submitForm = async () => {
           <h2
             class="text-4xl md:text-5xl font-serif text-[#3D3D3D] leading-tight"
           >
-            Paula & Nikolaus Wedding
+            Emmet & Marissa Wedding
           </h2>
           <div class="w-12 h-[1px] bg-[#E5C352] mx-auto mt-6"></div>
         </div>
