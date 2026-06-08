@@ -22,11 +22,13 @@ const openEnvelope = () => {
     videoRef.value.load();
     const playPromise = videoRef.value.play();
     if (playPromise !== undefined) {
-      playPromise.then(() => {
-        videoRef.value.pause();
-      }).catch((e) => {
-        console.warn("Video unlock failed:", e);
-      });
+      playPromise
+        .then(() => {
+          videoRef.value.pause();
+        })
+        .catch((e) => {
+          console.warn("Video unlock failed:", e);
+        });
     }
   }
 
@@ -186,14 +188,7 @@ const goToRSVP = () => {
         <!-- End State Overlay -->
         <Transition name="fade">
           <div v-if="videoEnded" class="end-overlay">
-            <div
-              class="text-center p-8 bg-black/40 backdrop-blur-md rounded-lg"
-            >
-              <h2 class="text-white text-4xl mb-8 handwriting">
-                We can't wait to celebrate with you
-              </h2>
-              <button @click="goToRSVP" class="rsvp-button">RSVP NOW</button>
-            </div>
+            <button @click="goToRSVP" class="rsvp-button">RSVP NOW</button>
           </div>
         </Transition>
       </div>
@@ -328,7 +323,7 @@ const goToRSVP = () => {
   transform: translate(-50%, -50%);
   width: 320px;
   height: 180px;
-  background: #FBF3F8;
+  background: #fef6fa;
   z-index: 15;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -384,7 +379,7 @@ const goToRSVP = () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: #fef6fa;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -394,19 +389,14 @@ const goToRSVP = () => {
 .full-screen-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .end-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1100;
 }
 
