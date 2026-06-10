@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #F1F1EB;
-  --color-text: #3D3D3D;
-  --color-accent: #E5C352;
+  --color-primary: #FEF6FA;
+  --color-text: #3D3B39;
+  --color-accent: #D5C6DC;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Montserrat", sans-serif;
 }

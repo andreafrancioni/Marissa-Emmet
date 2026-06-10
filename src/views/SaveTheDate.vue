@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -12,27 +12,6 @@ const isOpen = ref(false);
 const isOut = ref(false);
 const isZooming = ref(false);
 const isFullScreen = ref(false);
-
-// Helper to set theme-color and body background
-const setThemeColor = (color) => {
-  let meta = document.querySelector('meta[name="theme-color"]');
-  if (!meta) {
-    meta = document.createElement('meta');
-    meta.setAttribute('name', 'theme-color');
-    document.head.appendChild(meta);
-  }
-  meta.setAttribute('content', color);
-  document.documentElement.style.backgroundColor = color;
-  document.body.style.backgroundColor = color;
-};
-
-onMounted(() => {
-  setThemeColor("#FEF6FA");
-});
-
-onUnmounted(() => {
-  setThemeColor("#F1F1EB");
-});
 
 const openEnvelope = () => {
   if (isOpen.value) return;
@@ -72,7 +51,6 @@ const openEnvelope = () => {
 
 const startExperience = () => {
   hasStarted.value = true;
-  setThemeColor("#000000");
   if (videoRef.value) {
     videoRef.value.play();
   }
@@ -239,8 +217,8 @@ const goToRSVP = () => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background-color: #FEF6FA; // Deep dark background
   overflow: hidden;
   z-index: 100;
@@ -369,8 +347,8 @@ const goToRSVP = () => {
   }
 
   &.zooming {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -408,8 +386,8 @@ const goToRSVP = () => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background: #fef6fa;
   z-index: 1000;
   display: flex;
