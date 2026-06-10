@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -12,6 +12,27 @@ const isOpen = ref(false);
 const isOut = ref(false);
 const isZooming = ref(false);
 const isFullScreen = ref(false);
+
+// Helper to set theme-color and body background
+const setThemeColor = (color) => {
+  let meta = document.querySelector('meta[name="theme-color"]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute('name', 'theme-color');
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute('content', color);
+  document.documentElement.style.backgroundColor = color;
+  document.body.style.backgroundColor = color;
+};
+
+onMounted(() => {
+  setThemeColor("#FEF6FA");
+});
+
+onUnmounted(() => {
+  setThemeColor("#F1F1EB");
+});
 
 const openEnvelope = () => {
   if (isOpen.value) return;
@@ -51,6 +72,7 @@ const openEnvelope = () => {
 
 const startExperience = () => {
   hasStarted.value = true;
+  setThemeColor("#000000");
   if (videoRef.value) {
     videoRef.value.play();
   }
