@@ -173,7 +173,7 @@ const submitForm = async () => {
 <template>
   <section
     id="rsvp"
-    class="relative min-h-screen py-24 bg-[#F1F1EB] overflow-hidden flex items-center justify-center"
+    class="relative min-h-screen py-24 bg-[#FEF6FA] overflow-hidden flex items-center justify-center"
   >
     <div class="relative z-10 w-full max-w-2xl px-6">
       <div
@@ -187,11 +187,11 @@ const submitForm = async () => {
             Confirm Attendance
           </h3>
           <h2
-            class="text-4xl md:text-5xl font-serif text-[#3D3D3D] leading-tight"
+            class="text-4xl md:text-5xl font-serif text-[#3D3B39] leading-tight"
           >
             Emmet & Marissa Wedding
           </h2>
-          <div class="w-12 h-[1px] bg-[#E5C352] mx-auto mt-6"></div>
+          <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
         </div>
 
         <!-- Success Message -->
@@ -199,14 +199,14 @@ const submitForm = async () => {
           v-if="isSuccess"
           class="text-center py-12 animate-in fade-in duration-700"
         >
-          <h3 class="text-2xl font-serif text-[#3D3D3D] mb-4">Grazie Mille!</h3>
+          <h3 class="text-2xl font-serif text-[#3D3B39] mb-4">Grazie Mille!</h3>
           <p class="text-lg text-gray-600 font-light italic">
             Your response has been recorded. We look forward to celebrating with
             you!
           </p>
           <div class="mt-8">
             <svg
-              class="w-16 h-16 text-[#E5C352] mx-auto opacity-50"
+              class="w-16 h-16 text-[#D5C6DC] mx-auto opacity-50"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -230,14 +230,14 @@ const submitForm = async () => {
                 :class="[
                   'w-2 h-2 rounded-full transition-all duration-500',
                   currentStep >= step
-                    ? 'bg-[#E5C352] scale-125'
+                    ? 'bg-[#bda1c9] scale-125'
                     : 'bg-gray-300',
                 ]"
               ></div>
               <div
                 v-if="step < 3"
                 class="absolute top-1/2 left-full w-12 h-[1px] -translate-y-1/2"
-                :class="currentStep > step ? 'bg-[#E5C352]' : 'bg-gray-200'"
+                :class="currentStep > step ? 'bg-[#bda1c9]' : 'bg-gray-200'"
               ></div>
             </div>
           </div>
@@ -250,7 +250,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Contact Information
                 </h4>
@@ -264,7 +264,7 @@ const submitForm = async () => {
                       v-model="form.title"
                       type="text"
                       placeholder="Mr / Mrs"
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-200 font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
                     />
                   </div>
                   <div class="md:col-span-3 space-y-2">
@@ -276,7 +276,7 @@ const submitForm = async () => {
                       v-model="form.fullName"
                       type="text"
                       required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                     />
                   </div>
                 </div>
@@ -289,7 +289,7 @@ const submitForm = async () => {
                     v-model="form.email"
                     type="email"
                     required
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                   />
                 </div>
                 <div class="space-y-2">
@@ -302,14 +302,14 @@ const submitForm = async () => {
                     type="tel"
                     required
                     placeholder="+00 000 0000000"
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                   />
                 </div>
               </div>
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Additional Guest
                 </h4>
@@ -323,7 +323,7 @@ const submitForm = async () => {
                       v-model="form.guestTitle"
                       type="text"
                       placeholder="Mr / Mrs"
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-200 font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
                     />
                   </div>
                   <div class="md:col-span-3 space-y-2">
@@ -334,7 +334,7 @@ const submitForm = async () => {
                     <input
                       v-model="form.guestName"
                       type="text"
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                     />
                   </div>
                 </div>
@@ -348,7 +348,7 @@ const submitForm = async () => {
             >
               <div class="text-center space-y-6">
                 <h4
-                  class="text-sm font-serif text-[#3D3D3D] uppercase tracking-[0.2em]"
+                  class="text-sm font-serif text-[#3D3B39] uppercase tracking-[0.2em]"
                 >
                   Will you join us?
                 </h4>
@@ -363,11 +363,11 @@ const submitForm = async () => {
                         type="radio"
                         value="yes"
                         v-model="form.attending"
-                        class="peer h-5 w-5 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[6px] transition-all"
+                        class="peer h-5 w-5 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[6px] transition-all"
                       />
                     </div>
                     <span
-                      class="text-base text-gray-600 font-light italic group-hover:text-[#3D3D3D] transition-colors"
+                      class="text-base text-gray-600 font-light italic group-hover:text-[#3D3B39] transition-colors"
                       >Yes, I'll be there</span
                     >
                   </label>
@@ -379,11 +379,11 @@ const submitForm = async () => {
                         type="radio"
                         value="no"
                         v-model="form.attending"
-                        class="peer h-5 w-5 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[6px] transition-all"
+                        class="peer h-5 w-5 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[6px] transition-all"
                       />
                     </div>
                     <span
-                      class="text-base text-gray-600 font-light italic group-hover:text-[#3D3D3D] transition-colors"
+                      class="text-base text-gray-600 font-light italic group-hover:text-[#3D3B39] transition-colors"
                       >Regretfully decline</span
                     >
                   </label>
@@ -398,7 +398,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Shipping Address for Invitation
                 </h4>
@@ -415,7 +415,7 @@ const submitForm = async () => {
                     v-model="form.shippingName"
                     type="text"
                     required
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                   />
                 </div>
                 <div class="space-y-2">
@@ -427,7 +427,7 @@ const submitForm = async () => {
                     v-model="form.shippingAddress"
                     type="text"
                     required
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                   />
                 </div>
                 <div class="grid grid-cols-2 gap-4">
@@ -440,7 +440,7 @@ const submitForm = async () => {
                       v-model="form.shippingCity"
                       type="text"
                       required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                     />
                   </div>
                   <div class="space-y-2">
@@ -452,7 +452,7 @@ const submitForm = async () => {
                       v-model="form.shippingZip"
                       type="text"
                       required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                     />
                   </div>
                 </div>
@@ -465,7 +465,7 @@ const submitForm = async () => {
                     v-model="form.shippingCountry"
                     type="text"
                     required
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light italic"
                   />
                 </div>
                 <div class="space-y-2">
@@ -477,7 +477,7 @@ const submitForm = async () => {
                     v-model="form.shippingNotes"
                     type="text"
                     placeholder="e.g. concierge instructions, gate code"
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-200 font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
                   />
                 </div>
               </div>
@@ -491,7 +491,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Travel Information
                 </h4>
@@ -505,7 +505,7 @@ const submitForm = async () => {
                       v-model="form.arrivalDate"
                       type="date"
                       required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
                   </div>
                   <div class="space-y-2">
@@ -517,7 +517,7 @@ const submitForm = async () => {
                       v-model="form.departureDate"
                       type="date"
                       required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors font-light"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
                   </div>
                 </div>
@@ -525,7 +525,7 @@ const submitForm = async () => {
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Accommodation
                 </h4>
@@ -540,7 +540,7 @@ const submitForm = async () => {
                     type="text"
                     required
                     placeholder="Enter hotel name"
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-200 font-light italic"
+                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
                   />
                 </div>
               </div>
@@ -555,14 +555,14 @@ const submitForm = async () => {
             >
               <div class="space-y-8">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Event Attendance
                 </h4>
 
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
-                    <h5 class="text-base font-serif text-[#3D3D3D]">
+                    <h5 class="text-base font-serif text-[#3D3B39]">
                       Welcome Dinner
                     </h5>
                     <p
@@ -580,10 +580,10 @@ const submitForm = async () => {
                         type="radio"
                         value="will_attend"
                         v-model="form.events.welcomeDinner.status"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >Will attend</span
                       >
                     </label>
@@ -594,10 +594,10 @@ const submitForm = async () => {
                         type="radio"
                         value="not_attend"
                         v-model="form.events.welcomeDinner.status"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >Will not attend</span
                       >
                     </label>
@@ -615,14 +615,14 @@ const submitForm = async () => {
                       v-model.number="form.events.welcomeDinner.guests"
                       type="number"
                       min="1"
-                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light"
+                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
                     />
                   </div>
                 </div>
 
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
-                    <h5 class="text-base font-serif text-[#3D3D3D]">
+                    <h5 class="text-base font-serif text-[#3D3B39]">
                       Wedding Day
                     </h5>
                     <p
@@ -640,10 +640,10 @@ const submitForm = async () => {
                         type="radio"
                         value="will_attend"
                         v-model="form.events.weddingDay.status"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >Will attend</span
                       >
                     </label>
@@ -654,10 +654,10 @@ const submitForm = async () => {
                         type="radio"
                         value="not_attend"
                         v-model="form.events.weddingDay.status"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >Will not attend</span
                       >
                     </label>
@@ -675,7 +675,7 @@ const submitForm = async () => {
                       v-model.number="form.events.weddingDay.guests"
                       type="number"
                       min="1"
-                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light"
+                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
                     />
                   </div>
                 </div>
@@ -684,7 +684,7 @@ const submitForm = async () => {
               <div class="space-y-6 pt-6 border-t border-black/5">
                 <div class="text-center space-y-4">
                   <h4
-                    class="text-sm font-serif text-[#3D3D3D] uppercase tracking-[0.2em]"
+                    class="text-sm font-serif text-[#3D3B39] uppercase tracking-[0.2em]"
                   >
                     Children
                   </h4>
@@ -699,10 +699,10 @@ const submitForm = async () => {
                         type="radio"
                         value="yes"
                         v-model="form.children.hasChildren"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >Yes</span
                       >
                     </label>
@@ -713,10 +713,10 @@ const submitForm = async () => {
                         type="radio"
                         value="no"
                         v-model="form.children.hasChildren"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                         >No</span
                       >
                     </label>
@@ -743,7 +743,7 @@ const submitForm = async () => {
                         v-model.number="form.children.count"
                         type="number"
                         min="1"
-                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light"
+                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
                       />
                     </div>
                     <div class="space-y-2">
@@ -755,7 +755,7 @@ const submitForm = async () => {
                         v-model="form.children.names"
                         type="text"
                         placeholder="e.g. Leo, Sofia"
-                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light italic"
+                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
                       />
                     </div>
                   </div>
@@ -769,12 +769,12 @@ const submitForm = async () => {
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div class="space-y-2">
                         <label
-                          class="block text-[10px] font-serif text-[#3D3D3D]"
+                          class="block text-[10px] font-serif text-[#3D3B39]"
                           >Welcome Dinner</label
                         >
                         <select
                           v-model="form.children.welcomeDinner"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light italic"
+                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
                         >
                           <option value="">Select status</option>
                           <option value="will_attend">Will attend</option>
@@ -783,12 +783,12 @@ const submitForm = async () => {
                       </div>
                       <div class="space-y-2">
                         <label
-                          class="block text-[10px] font-serif text-[#3D3D3D]"
+                          class="block text-[10px] font-serif text-[#3D3B39]"
                           >Wedding Day</label
                         >
                         <select
                           v-model="form.children.weddingDay"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light italic"
+                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
                         >
                           <option value="">Select status</option>
                           <option value="will_attend">Will attend</option>
@@ -810,10 +810,10 @@ const submitForm = async () => {
                           type="radio"
                           value="yes"
                           v-model="form.children.hasBabysitter"
-                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                         />
                         <span
-                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                           >Yes</span
                         >
                       </label>
@@ -824,10 +824,10 @@ const submitForm = async () => {
                           type="radio"
                           value="no"
                           v-model="form.children.hasBabysitter"
-                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#E5C352] checked:border-[5px] transition-all"
+                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                         />
                         <span
-                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3D3D]"
+                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
                           >No</span
                         >
                       </label>
@@ -845,7 +845,7 @@ const submitForm = async () => {
                         <input
                           v-model="form.children.babysitterName"
                           type="text"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light italic"
+                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
                         />
                       </div>
                       <div class="space-y-2">
@@ -857,7 +857,7 @@ const submitForm = async () => {
                           v-model="form.children.babysitterEvents"
                           type="text"
                           placeholder="e.g. Only Wedding Day"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#E5C352] text-sm font-light italic"
+                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
                         />
                       </div>
                     </div>
@@ -875,7 +875,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3D3D] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Dietary Requirements
                 </h4>
@@ -892,7 +892,7 @@ const submitForm = async () => {
                     v-model="form.dietary.allergies"
                     rows="2"
                     placeholder="Please specify any medical food allergies..."
-                    class="w-full bg-transparent border border-gray-200 p-4 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-300 font-light text-base italic resize-none"
+                    class="w-full bg-transparent border border-gray-200 p-4 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-300 font-light text-base italic resize-none"
                   ></textarea>
                 </div>
 
@@ -905,7 +905,7 @@ const submitForm = async () => {
                     v-model="form.dietary.preferences"
                     rows="2"
                     placeholder="e.g. Vegetarian, Vegan, no seafood..."
-                    class="w-full bg-transparent border border-gray-200 p-4 focus:outline-none focus:border-[#E5C352] transition-colors placeholder:text-gray-300 font-light text-base italic resize-none"
+                    class="w-full bg-transparent border border-gray-200 p-4 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-300 font-light text-base italic resize-none"
                   ></textarea>
                 </div>
               </div>
@@ -928,7 +928,7 @@ const submitForm = async () => {
                 v-if="currentStep > 1"
                 type="button"
                 @click="prevStep"
-                class="text-[10px] tracking-[0.3em] font-sans uppercase text-gray-400 hover:text-[#3D3D3D] transition-colors"
+                class="text-[10px] tracking-[0.3em] font-sans uppercase text-gray-400 hover:text-[#3D3B39] transition-colors"
               >
                 Back
               </button>
@@ -938,7 +938,7 @@ const submitForm = async () => {
                 v-if="currentStep < 3"
                 type="button"
                 @click="nextStep"
-                class="px-12 py-4 bg-[#3D3D3D] text-white text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-[#E5C352] transition-all duration-300"
+                class="px-12 py-4 bg-[#3D3B39] text-white text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-[#D5C6DC] hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 {{
                   currentStep === 2 && form.attending === "no"
@@ -951,7 +951,7 @@ const submitForm = async () => {
                 v-else
                 type="submit"
                 :disabled="isSubmitting"
-                class="px-12 py-4 bg-[#E5C352] text-white text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                class="px-12 py-4 bg-[#D5C6DC] text-[#3D3B39] text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-white hover:text-[#3D3B39] rounded-[5px] shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {{ isSubmitting ? "Sending..." : "Confirm RSVP" }}
               </button>
@@ -965,7 +965,7 @@ const submitForm = async () => {
           Need help?
           <a
             href="mailto:emmetmarissa@AFFRESCO.IT"
-            class="underline hover:text-[#3D3D3D]"
+            class="underline hover:text-[#3D3B39]"
             >emmetmarissa@AFFRESCO.IT</a
           >
         </p>

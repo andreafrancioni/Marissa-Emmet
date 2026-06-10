@@ -219,7 +219,7 @@ const goToRSVP = () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fffff0; // Deep dark background
+  background-color: #FEF6FA; // Deep dark background
   overflow: hidden;
   z-index: 100;
   display: flex;

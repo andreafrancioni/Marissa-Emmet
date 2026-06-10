@@ -41,7 +41,7 @@
         <p
           class="text-sm md:text-lg tracking-[0.3em] font-sans uppercase text-[#3D3D3D]/70"
         >
-          VENICE, ITALY
+          FLORENCE, ITALY
         </p>
       </div>
 
@@ -55,7 +55,7 @@
           class="text-lg md:text-xl font-serif leading-relaxed text-[#3D3D3D]/80"
         >
           We are delighted to share with you the program for our celebration
-          weekend this June in Venice, Italy. <br class="hidden md:block" />
+          weekend this August in Florence, Italy. <br class="hidden md:block" />
           Please note that we are arranging all transfers to and from the
           celebration venues <br class="hidden md:block" />
           (Welcome Dinner, Wedding Party, and Brunch).

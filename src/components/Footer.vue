@@ -31,7 +31,7 @@
             June 18th to 20th 2027
           </p>
           <p class="text-xs tracking-[0.2em] font-sans text-gray-400 uppercase">
-            Venice Italy
+            Florence Italy
           </p>
         </div>
       </div>

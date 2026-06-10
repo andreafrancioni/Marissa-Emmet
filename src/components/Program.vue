@@ -31,7 +31,7 @@ const days = [
       {
         time: "Morning",
         description:
-          "Dedicated to curated experiences to discover the beauty of Venice.",
+          "Dedicated to curated experiences to discover the beauty of Florence.",
       },
       {
         time: "1:30 PM",
