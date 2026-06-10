@@ -6,6 +6,7 @@ const router = useRouter();
 const videoRef = ref(null);
 const hasStarted = ref(false);
 const videoEnded = ref(false);
+const showRsvpButton = ref(false);
 
 const isOpen = ref(false);
 const isOut = ref(false);
@@ -55,8 +56,15 @@ const startExperience = () => {
   }
 };
 
+const onTimeUpdate = () => {
+  if (videoRef.value && videoRef.value.currentTime >= 12) {
+    showRsvpButton.value = true;
+  }
+};
+
 const onVideoEnded = () => {
   videoEnded.value = true;
+  showRsvpButton.value = true;
 };
 
 const goToRSVP = () => {
@@ -179,15 +187,16 @@ const goToRSVP = () => {
           ref="videoRef"
           class="full-screen-video"
           playsinline
+          @timeupdate="onTimeUpdate"
           @ended="onVideoEnded"
         >
-          <source src="../assets/savethedatevideo.mp4" type="video/mp4" />
+          <source src="../assets/savethedateemmetmarissa.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         <!-- End State Overlay -->
         <Transition name="fade">
-          <div v-if="videoEnded" class="end-overlay">
+          <div v-if="showRsvpButton" class="end-overlay">
             <button @click="goToRSVP" class="rsvp-button">RSVP NOW</button>
           </div>
         </Transition>
@@ -402,8 +411,8 @@ const goToRSVP = () => {
 
 .rsvp-button {
   padding: 1.25rem 3.5rem;
-  background-color: #e5c352;
-  color: white;
+  background-color: #D5C6DC;
+  color: #3D3B39;
   border: none;
   font-family: "Montserrat", sans-serif;
   font-size: 0.7rem;
@@ -411,7 +420,8 @@ const goToRSVP = () => {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(166, 130, 173, 0.3);
 
   &:hover {
     background-color: white;
