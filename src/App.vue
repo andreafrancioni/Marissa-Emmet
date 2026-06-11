@@ -6,11 +6,12 @@ import Footer from './components/Footer.vue'
 
 const route = useRoute()
 const isSaveTheDate = computed(() => route.path === '/savethedate')
+const isRSVP = computed(() => route.path === '/rsvp')
 </script>
 
 <template>
   <div class="relative bg-[#F1F1EB] text-[#3D3D3D] selection:bg-[#E5C352] selection:text-white min-h-screen flex flex-col">
-    <Navigation v-if="!isSaveTheDate" />
+    <Navigation v-if="!isSaveTheDate && !isRSVP" />
     <main class="flex-grow">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">

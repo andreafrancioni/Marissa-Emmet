@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive } from "vue";
+import stickersImg from "@/assets/stickers.png";
 
 const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
@@ -32,19 +33,11 @@ const form = reactive({
   hotel: "",
   // Step 5: Events
   events: {
-    welcomeDinner: { status: "", guests: 1 },
+    welcomeEvening: { status: "", guests: 1 },
     weddingDay: { status: "", guests: 1 },
+    farewellBrunch: { status: "", guests: 1 },
   },
-  children: {
-    hasChildren: "",
-    count: 1,
-    names: "",
-    welcomeDinner: "",
-    weddingDay: "",
-    hasBabysitter: "",
-    babysitterName: "",
-    babysitterEvents: "",
-  },
+  // Step 6: Dietary
   dietary: {
     allergies: "",
     preferences: "",
@@ -55,7 +48,7 @@ const nextStep = () => {
   if (validateStep()) {
     if (
       (currentStep.value === 2 && form.attending === "no") ||
-      currentStep.value === 3
+      currentStep.value === 6
     ) {
       submitForm();
       return;
@@ -106,7 +99,6 @@ const validateStep = () => {
       return false;
     }
   }
-  /* Commentato temporaneamente come richiesto dai clienti
   if (currentStep.value === 4) {
     if (!form.arrivalDate || !form.departureDate || !form.hotel) {
       errorMessage.value = "Please fill in all required travel fields.";
@@ -127,13 +119,11 @@ const validateStep = () => {
       return false;
     }
   }
-  */
   errorMessage.value = "";
   return true;
 };
 
 const submitForm = async () => {
-  /* Commentato temporaneamente come richiesto dai clienti
   if (form.attending === "yes" && form.events.weddingDay.status === "") {
     errorMessage.value =
       "Please let us know if you will attend the Wedding Day.";
@@ -143,7 +133,6 @@ const submitForm = async () => {
     errorMessage.value = "Please fill in the food allergies field.";
     return;
   }
-  */
 
   isSubmitting.value = true;
   errorMessage.value = "";
@@ -180,18 +169,33 @@ const submitForm = async () => {
         class="bg-white/40 backdrop-blur-sm p-8 md:p-12 border border-black/5 shadow-sm rounded-sm"
       >
         <!-- Header -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 relative">
+          <!-- Decorative Stickers -->
+          <div
+            class="absolute opacity-[0.15] pointer-events-none"
+            :style="{
+              backgroundImage: `url(${stickersImg})`,
+              backgroundPosition: '-170px -680px',
+              width: '90px',
+              height: '230px',
+              bottom: '-40px',
+              right: '-20px',
+            }"
+          ></div>
+
           <h3
-            class="text-[10px] tracking-[0.4em] font-sans text-gray-500 uppercase mb-4"
+            class="text-[10px] tracking-[0.4em] font-sans text-gray-500 uppercase mb-4 relative z-10"
           >
             Confirm Attendance
           </h3>
           <h2
-            class="text-4xl md:text-5xl font-serif text-[#3D3B39] leading-tight"
+            class="text-4xl md:text-6xl handwriting text-[#3D3B39] leading-tight relative z-10"
           >
-            Emmet & Marissa Wedding
+            Emmet & Marissa<br />Wedding
           </h2>
-          <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
+          <div
+            class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6 relative z-10"
+          ></div>
         </div>
 
         <!-- Success Message -->
@@ -223,9 +227,9 @@ const submitForm = async () => {
 
         <!-- Form Steps -->
         <div v-else>
-          <!-- Step Indicators (Temporaneamente limitati a 3) -->
-          <div class="flex justify-center mb-12 space-x-12">
-            <div v-for="step in 3" :key="step" class="relative">
+          <!-- Step Indicators -->
+          <div class="flex justify-center mb-12 space-x-4 md:space-x-8">
+            <div v-for="step in 6" :key="step" class="relative">
               <div
                 :class="[
                   'w-2 h-2 rounded-full transition-all duration-500',
@@ -235,8 +239,8 @@ const submitForm = async () => {
                 ]"
               ></div>
               <div
-                v-if="step < 3"
-                class="absolute top-1/2 left-full w-12 h-[1px] -translate-y-1/2"
+                v-if="step < 6"
+                class="absolute top-1/2 left-full w-4 md:w-8 h-[1px] -translate-y-1/2"
                 :class="currentStep > step ? 'bg-[#bda1c9]' : 'bg-gray-200'"
               ></div>
             </div>
@@ -388,6 +392,13 @@ const submitForm = async () => {
                     >
                   </label>
                 </div>
+
+                <p
+                  class="text-xs md:text-sm text-gray-500 font-light italic max-w-md mx-auto pt-6"
+                >
+                  While we adore your little ones, we kindly invite you to enjoy
+                  our wedding celebrations as an adults-only occasion.
+                </p>
               </div>
             </div>
 
@@ -483,8 +494,7 @@ const submitForm = async () => {
               </div>
             </div>
 
-            <!-- Step 4: Travel & Accommodation (Commentato temporaneamente) -->
-            <!--
+            <!-- Step 4: Travel & Accommodation -->
             <div
               v-if="currentStep === 4"
               class="space-y-6 animate-in fade-in duration-500"
@@ -545,10 +555,8 @@ const submitForm = async () => {
                 </div>
               </div>
             </div>
-            -->
 
-            <!-- Step 5: Events & Activities (Commentato temporaneamente) -->
-            <!--
+            <!-- Step 5: Events & Activities -->
             <div
               v-if="currentStep === 5"
               class="space-y-10 animate-in fade-in duration-500"
@@ -560,15 +568,16 @@ const submitForm = async () => {
                   Event Attendance
                 </h4>
 
+                <!-- Welcome Evening -->
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
                     <h5 class="text-base font-serif text-[#3D3B39]">
-                      Welcome Dinner
+                      Welcome to Florence
                     </h5>
                     <p
                       class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
                     >
-                      June 18, 2027 at 7:00 PM
+                      Thursday, April 22, 2027 at 9:00 PM
                     </p>
                   </div>
 
@@ -579,7 +588,7 @@ const submitForm = async () => {
                       <input
                         type="radio"
                         value="will_attend"
-                        v-model="form.events.welcomeDinner.status"
+                        v-model="form.events.welcomeEvening.status"
                         class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
@@ -593,7 +602,7 @@ const submitForm = async () => {
                       <input
                         type="radio"
                         value="not_attend"
-                        v-model="form.events.welcomeDinner.status"
+                        v-model="form.events.welcomeEvening.status"
                         class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
@@ -604,7 +613,7 @@ const submitForm = async () => {
                   </div>
 
                   <div
-                    v-if="form.events.welcomeDinner.status === 'will_attend'"
+                    v-if="form.events.welcomeEvening.status === 'will_attend'"
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
@@ -612,7 +621,7 @@ const submitForm = async () => {
                       >Number of attendees</label
                     >
                     <input
-                      v-model.number="form.events.welcomeDinner.guests"
+                      v-model.number="form.events.welcomeEvening.guests"
                       type="number"
                       min="1"
                       class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
@@ -620,6 +629,7 @@ const submitForm = async () => {
                   </div>
                 </div>
 
+                <!-- Wedding Day -->
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
                     <h5 class="text-base font-serif text-[#3D3B39]">
@@ -628,7 +638,7 @@ const submitForm = async () => {
                     <p
                       class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
                     >
-                      June 19, 2027 from 4:00 PM onwards
+                      Friday, April 23, 2027 at 4:00 PM
                     </p>
                   </div>
 
@@ -679,196 +689,71 @@ const submitForm = async () => {
                     />
                   </div>
                 </div>
-              </div>
 
-              <div class="space-y-6 pt-6 border-t border-black/5">
-                <div class="text-center space-y-4">
-                  <h4
-                    class="text-sm font-serif text-[#3D3B39] uppercase tracking-[0.2em]"
-                  >
-                    Children
-                  </h4>
-                  <p class="text-[11px] text-gray-500 font-sans">
-                    Will you be accompanied by children?
-                  </p>
-                  <div class="flex items-center justify-center space-x-8">
-                    <label
-                      class="flex items-center space-x-2 cursor-pointer group"
-                    >
-                      <input
-                        type="radio"
-                        value="yes"
-                        v-model="form.children.hasChildren"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
-                      />
-                      <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
-                        >Yes</span
-                      >
-                    </label>
-                    <label
-                      class="flex items-center space-x-2 cursor-pointer group"
-                    >
-                      <input
-                        type="radio"
-                        value="no"
-                        v-model="form.children.hasChildren"
-                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
-                      />
-                      <span
-                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
-                        >No</span
-                      >
-                    </label>
-                  </div>
-                </div>
-
-                <div
-                  v-if="form.children.hasChildren === 'yes'"
-                  class="space-y-8 animate-in fade-in duration-500 bg-black/5 p-6 rounded-sm"
-                >
-                  <p
-                    class="text-[10px] text-gray-400 italic font-sans italic text-center uppercase tracking-wider"
-                  >
-                    Please provide the following details
-                  </p>
-
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                      <label
-                        class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
-                        >Number of children</label
-                      >
-                      <input
-                        v-model.number="form.children.count"
-                        type="number"
-                        min="1"
-                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
-                      />
-                    </div>
-                    <div class="space-y-2">
-                      <label
-                        class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
-                        >Name(s)</label
-                      >
-                      <input
-                        v-model="form.children.names"
-                        type="text"
-                        placeholder="e.g. Leo, Sofia"
-                        class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="space-y-4">
+                <!-- Farewell Poolside Brunch -->
+                <div class="space-y-4 p-6 bg-black/5 rounded-sm">
+                  <div>
+                    <h5 class="text-base font-serif text-[#3D3B39]">
+                      Farewell Poolside Brunch
+                    </h5>
                     <p
-                      class="text-[9px] tracking-widest uppercase text-gray-400 font-sans border-b border-black/5 pb-1"
+                      class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
                     >
-                      Children attendance at each event
+                      Saturday, April 24, 2027 at 11:30 AM
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div class="space-y-2">
-                        <label
-                          class="block text-[10px] font-serif text-[#3D3B39]"
-                          >Welcome Dinner</label
-                        >
-                        <select
-                          v-model="form.children.welcomeDinner"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
-                        >
-                          <option value="">Select status</option>
-                          <option value="will_attend">Will attend</option>
-                          <option value="not_attend">Will not attend</option>
-                        </select>
-                      </div>
-                      <div class="space-y-2">
-                        <label
-                          class="block text-[10px] font-serif text-[#3D3B39]"
-                          >Wedding Day</label
-                        >
-                        <select
-                          v-model="form.children.weddingDay"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
-                        >
-                          <option value="">Select status</option>
-                          <option value="will_attend">Will attend</option>
-                          <option value="not_attend">Will not attend</option>
-                        </select>
-                      </div>
-                    </div>
                   </div>
 
-                  <div class="space-y-4 pt-4 border-t border-black/10">
-                    <p class="text-[11px] text-center text-gray-500 font-sans">
-                      Will you be accompanied by a babysitter?
-                    </p>
-                    <div class="flex items-center justify-center space-x-8">
-                      <label
-                        class="flex items-center space-x-2 cursor-pointer group"
-                      >
-                        <input
-                          type="radio"
-                          value="yes"
-                          v-model="form.children.hasBabysitter"
-                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
-                        />
-                        <span
-                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
-                          >Yes</span
-                        >
-                      </label>
-                      <label
-                        class="flex items-center space-x-2 cursor-pointer group"
-                      >
-                        <input
-                          type="radio"
-                          value="no"
-                          v-model="form.children.hasBabysitter"
-                          class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
-                        />
-                        <span
-                          class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
-                          >No</span
-                        >
-                      </label>
-                    </div>
-
-                    <div
-                      v-if="form.children.hasBabysitter === 'yes'"
-                      class="space-y-4 pt-4 animate-in fade-in duration-300"
+                  <div class="flex space-x-6">
+                    <label
+                      class="flex items-center space-x-2 cursor-pointer group"
                     >
-                      <div class="space-y-2">
-                        <label
-                          class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
-                          >Babysitter name (if available)</label
-                        >
-                        <input
-                          v-model="form.children.babysitterName"
-                          type="text"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
-                        />
-                      </div>
-                      <div class="space-y-2">
-                        <label
-                          class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
-                          >Which events will the babysitter attend?</label
-                        >
-                        <input
-                          v-model="form.children.babysitterEvents"
-                          type="text"
-                          placeholder="e.g. Only Wedding Day"
-                          class="w-full bg-transparent border-b border-gray-200 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light italic"
-                        />
-                      </div>
-                    </div>
+                      <input
+                        type="radio"
+                        value="will_attend"
+                        v-model="form.events.farewellBrunch.status"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
+                      />
+                      <span
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
+                        >Will attend</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center space-x-2 cursor-pointer group"
+                    >
+                      <input
+                        type="radio"
+                        value="not_attend"
+                        v-model="form.events.farewellBrunch.status"
+                        class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
+                      />
+                      <span
+                        class="text-sm text-gray-600 font-light italic group-hover:text-[#3D3B39]"
+                        >Will not attend</span
+                      >
+                    </label>
+                  </div>
+
+                  <div
+                    v-if="form.events.farewellBrunch.status === 'will_attend'"
+                    class="pt-2 animate-in fade-in duration-300"
+                  >
+                    <label
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans mb-1"
+                      >Number of attendees</label
+                    >
+                    <input
+                      v-model.number="form.events.farewellBrunch.guests"
+                      type="number"
+                      min="1"
+                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            -->
 
-            <!-- Step 6: Dietary Requirements (Commentato temporaneamente) -->
-            <!--
+            <!-- Step 6: Dietary Requirements -->
             <div
               v-if="currentStep === 6"
               class="space-y-8 animate-in fade-in duration-500"
@@ -910,7 +795,6 @@ const submitForm = async () => {
                 </div>
               </div>
             </div>
-            -->
 
             <!-- Error Message -->
             <p
@@ -935,7 +819,7 @@ const submitForm = async () => {
               <div v-else></div>
 
               <button
-                v-if="currentStep < 3"
+                v-if="currentStep < 6"
                 type="button"
                 @click="nextStep"
                 class="px-12 py-4 bg-[#3D3B39] text-white text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-[#D5C6DC] hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"

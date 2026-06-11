@@ -1,5 +1,5 @@
 <template>
-  <section class="relative bg-[#F1F1EB] pt-24 overflow-hidden">
+  <section id="welcome" class="relative bg-[#F1F1EB] pt-24 overflow-hidden">
     <!-- Hero Banner Image -->
     <div class="w-full h-80 md:h-[500px] overflow-hidden">
       <img

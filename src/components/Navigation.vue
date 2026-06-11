@@ -1,18 +1,20 @@
 <script setup>
 import { ref } from "vue";
 
+import logoImage from "../assets/solo_logo.png";
+
 const navLeft = [
-  // { name: "WELCOME", href: "#welcome" },
-  // { name: "DAY BY DAY", href: "#program" },
-  // { name: "RSVP", href: "#rsvp" },
-  // { name: "CONTACT", href: "#contact" },
+  { name: "HOME", href: "#welcome" },
+  { name: "RSVP", href: "#rsvp" },
+  { name: "SCHEDULE OF EVENTS", href: "#program" },
+  { name: "ATTIRE", href: "#dresscode" },
 ];
 
 const navRight = [
-  // { name: "ACCOMMODATION", href: "#accommodation" },
-  // { name: "ACTIVITIES", href: "#activities" },
-  // { name: "DRESS CODE", href: "#dresscode" },
-  // { name: "AT A GLANCE", href: "#glance" },
+  { name: "YOUR STAY", href: "#accommodation" },
+  { name: "OUR FLORENCE", href: "#florence" },
+  { name: "CONTACT", href: "#contact" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 const isMenuOpen = ref(false);
@@ -38,7 +40,7 @@ const isMenuOpen = ref(false);
       <!-- Center Logo -->
       <div class="mx-4">
         <a href="#" class="flex flex-col items-center">
-          <h1 class="text-4xl md:text-5xl text-[#3D3D3D]">Emmet & Marissa</h1>
+          <img :src="logoImage" alt="Emmet & Marissa" class="h-16 md:h-20" />
         </a>
       </div>
 

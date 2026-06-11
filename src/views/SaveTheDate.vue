@@ -430,9 +430,6 @@ const goToRSVP = () => {
   }
 }
 
-.handwriting {
-  font-family: "Great Vibes", cursive;
-}
 
 // Animations
 @keyframes float {

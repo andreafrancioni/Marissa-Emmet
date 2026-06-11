@@ -4,7 +4,7 @@
     class="py-32 px-4 bg-[#F1F1EB] border-t border-[#3D3D3D]/10"
   >
     <div class="max-w-7xl mx-auto flex flex-col items-center gap-12">
-      <h1 class="text-6xl text-center md:text-left text-[#3D3D3D]">
+      <h1 class="text-6xl text-center md:text-left text-[#3D3D3D] handwriting">
         Emmet & Marissa
       </h1>
 
@@ -28,7 +28,7 @@
           <p
             class="text-[10px] tracking-widest font-sans uppercase font-bold text-gray-500"
           >
-            June 18th to 20th 2027
+            April 22nd to 24th 2027
           </p>
           <p class="text-xs tracking-[0.2em] font-sans text-gray-400 uppercase">
             Florence Italy

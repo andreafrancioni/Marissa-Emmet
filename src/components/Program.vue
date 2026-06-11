@@ -193,7 +193,5 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.handwriting {
-  font-family: "Great Vibes", cursive;
-}
+
 </style>
