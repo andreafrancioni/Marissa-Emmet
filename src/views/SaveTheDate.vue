@@ -11,7 +11,6 @@ const showRsvpButton = ref(false);
 const isOpen = ref(false);
 const isOut = ref(false);
 const isZooming = ref(false);
-const isFullScreen = ref(false);
 
 const openEnvelope = () => {
   if (isOpen.value) return;
@@ -24,9 +23,6 @@ const openEnvelope = () => {
     const playPromise = videoRef.value.play();
     if (playPromise !== undefined) {
       playPromise
-        .then(() => {
-          videoRef.value.pause();
-        })
         .catch((e) => {
           console.warn("Video unlock failed:", e);
         });
@@ -38,22 +34,9 @@ const openEnvelope = () => {
     isOut.value = true;
     setTimeout(() => {
       isZooming.value = true;
-      setTimeout(() => {
-        isFullScreen.value = true;
-        // Wait for the 2s fade-in transition before playing the video
-        setTimeout(() => {
-          startExperience();
-        }, 2000);
-      }, 2500); // Wait for the full 2.5s zooming animation
+      hasStarted.value = true;
     }, 1000); // Time for moving-up animation
   }, 800); // Time for flap opening
-};
-
-const startExperience = () => {
-  hasStarted.value = true;
-  if (videoRef.value) {
-    videoRef.value.play();
-  }
 };
 
 const onTimeUpdate = () => {
@@ -75,7 +58,7 @@ const goToRSVP = () => {
 <template>
   <div class="save-the-date-container" :class="{ 'bg-black': hasStarted }">
     <!-- 3D Envelope Experience -->
-    <div v-if="!videoEnded" class="envelope-scene">
+    <div class="envelope-scene">
       <div class="glow-effect"></div>
 
       <div
@@ -168,40 +151,29 @@ const goToRSVP = () => {
             class="letter"
             :class="{ 'moving-up': isOut, zooming: isZooming }"
           >
-            <img
-              src="../assets/marissaemmetlogo.jpeg"
-              class="letter-image"
-              alt="Marissa & Emmet Logo"
-            />
+            <video
+              ref="videoRef"
+              class="letter-video"
+              playsinline
+              @timeupdate="onTimeUpdate"
+              @ended="onVideoEnded"
+            >
+              <source src="../assets/savethedateemmetmarissa.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- End State Overlay -->
+            <Transition name="fade">
+              <div v-if="showRsvpButton" class="end-overlay">
+                <button @click.stop="goToRSVP" class="rsvp-button">RSVP NOW</button>
+              </div>
+            </Transition>
           </div>
         </div>
       </div>
 
       <div class="instruction" v-if="!isOpen">TAP TO OPEN</div>
     </div>
-
-    <!-- Full Screen Letter / Video Content -->
-    <Transition name="fade-video">
-      <div v-show="isFullScreen" class="full-screen-letter">
-        <video
-          ref="videoRef"
-          class="full-screen-video"
-          playsinline
-          @timeupdate="onTimeUpdate"
-          @ended="onVideoEnded"
-        >
-          <source src="../assets/savethedateemmetmarissa.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <!-- End State Overlay -->
-        <Transition name="fade">
-          <div v-if="showRsvpButton" class="end-overlay">
-            <button @click="goToRSVP" class="rsvp-button">RSVP NOW</button>
-          </div>
-        </Transition>
-      </div>
-    </Transition>
   </div>
 </template>
 
@@ -280,6 +252,7 @@ const goToRSVP = () => {
 
   &.is-open {
     animation: none;
+    transform: none !important;
   }
 }
 
@@ -364,7 +337,7 @@ const goToRSVP = () => {
   }
 }
 
-.letter-image {
+.letter-video {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -379,26 +352,6 @@ const goToRSVP = () => {
   letter-spacing: 0.4em;
   animation: fadeInOut 2s infinite ease-in-out;
   z-index: 5;
-}
-
-// Full Screen Letter / Video
-.full-screen-letter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100dvw;
-  height: 100dvh;
-  background: #fef6fa;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.full-screen-video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .end-overlay {
@@ -462,15 +415,6 @@ const goToRSVP = () => {
   50% {
     opacity: 1;
   }
-}
-
-// Transition for video fading in
-.fade-video-enter-active {
-  transition: opacity 2s ease;
-}
-
-.fade-video-enter-from {
-  opacity: 0;
 }
 
 .fade-enter-active,
