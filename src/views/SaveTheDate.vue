@@ -22,10 +22,9 @@ const openEnvelope = () => {
     videoRef.value.load();
     const playPromise = videoRef.value.play();
     if (playPromise !== undefined) {
-      playPromise
-        .catch((e) => {
-          console.warn("Video unlock failed:", e);
-        });
+      playPromise.catch((e) => {
+        console.warn("Video unlock failed:", e);
+      });
     }
   }
 
@@ -158,14 +157,17 @@ const goToRSVP = () => {
               @timeupdate="onTimeUpdate"
               @ended="onVideoEnded"
             >
-              <source src="../assets/savethedateemmetmarissa.mp4" type="video/mp4" />
+              <source
+                src="../assets/savethedateemmetmarissa.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
 
             <!-- End State Overlay -->
             <Transition name="fade">
               <div v-if="showRsvpButton" class="end-overlay">
-                <button @click.stop="goToRSVP" class="rsvp-button">RSVP NOW</button>
+                <button @click.stop="goToRSVP" class="rsvp-button">RSVP</button>
               </div>
             </Transition>
           </div>
@@ -191,7 +193,7 @@ const goToRSVP = () => {
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-color: #FEF6FA; // Deep dark background
+  background-color: #fef6fa; // Deep dark background
   overflow: hidden;
   z-index: 100;
   display: flex;
@@ -364,8 +366,8 @@ const goToRSVP = () => {
 
 .rsvp-button {
   padding: 1.25rem 3.5rem;
-  background-color: #D5C6DC;
-  color: #3D3B39;
+  background-color: #d5c6dc;
+  color: #3d3b39;
   border: none;
   font-family: "Montserrat", sans-serif;
   font-size: 0.7rem;
@@ -382,7 +384,6 @@ const goToRSVP = () => {
     transform: translateY(-2px);
   }
 }
-
 
 // Animations
 @keyframes float {

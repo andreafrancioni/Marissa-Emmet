@@ -1,17 +1,19 @@
 <template>
-  <section id="welcome" class="relative bg-[#F1F1EB] pt-24 overflow-hidden">
-    <!-- Hero Banner Image -->
-    <div class="w-full h-80 md:h-[500px] overflow-hidden">
-      <img
-        src="../assets/hero-banner.png"
-        alt="Lemon and Olive Pattern"
-        class="w-full h-full object-cover"
-      />
+  <section
+    id="welcome"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
+  >
+    <!-- Hero Video Background -->
+    <div class="absolute inset-0 w-full h-full z-0">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover">
+        <source src="../assets/15470637_3840_2160_60fps.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-[#F1F1EB]/65"></div>
     </div>
 
-    <!-- Main Content below Banner -->
+    <!-- Main Content centered over Video -->
     <div
-      class="relative z-10 text-center max-w-4xl mx-auto px-4 py-16 animate-fade-in-up"
+      class="relative z-10 text-center max-w-4xl mx-auto px-4 animate-fade-in-up"
     >
       <div class="flex items-center justify-center md:space-x-12 mb-4">
         <!-- Decorative Diamond Icons -->
@@ -44,23 +46,26 @@
           FLORENCE, ITALY
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="max-w-2xl mx-auto mt-16 space-y-6">
-        <p
-          class="text-xs md:text-sm tracking-[0.1em] font-sans text-gray-500 uppercase"
-        >
-          Dear Friends,
-        </p>
-        <p
-          class="text-lg md:text-xl font-serif leading-relaxed text-[#3D3D3D]/80"
-        >
-          We are delighted to share with you the program for our celebration
-          weekend this August in Florence, Italy. <br class="hidden md:block" />
-          Please note that we are arranging all transfers to and from the
-          celebration venues <br class="hidden md:block" />
-          (Welcome Dinner, Wedding Party, and Brunch).
-        </p>
-      </div>
+  <!-- Content below Hero -->
+  <section class="bg-[#F1F1EB] py-16 px-4">
+    <div class="max-w-2xl mx-auto text-center space-y-6 animate-fade-in-up">
+      <p
+        class="text-xs md:text-sm tracking-[0.1em] font-sans text-gray-500 uppercase"
+      >
+        Dear Friends,
+      </p>
+      <p
+        class="text-lg md:text-xl font-serif leading-relaxed text-[#3D3D3D]/80"
+      >
+        We are delighted to share with you the program for our celebration
+        weekend this August in Florence, Italy. <br class="hidden md:block" />
+        Please note that we are arranging all transfers to and from the
+        celebration venues <br class="hidden md:block" />
+        (Welcome Dinner, Wedding Party, and Brunch).
+      </p>
     </div>
   </section>
 </template>

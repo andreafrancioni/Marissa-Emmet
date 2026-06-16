@@ -4,7 +4,7 @@ import Program from '../components/Program.vue'
 import DressCode from '../components/DressCode.vue'
 import Contact from '../components/Contact.vue'
 import FAQ from '../components/FAQ.vue'
-import RSVP from '../components/RSVP.vue'
+import RSVPHome from '../components/RSVPHome.vue'
 </script>
 
 <template>
@@ -14,6 +14,6 @@ import RSVP from '../components/RSVP.vue'
     <DressCode />
     <Contact />
     <FAQ />
-    <RSVP />
+    <RSVPHome />
   </main>
 </template>

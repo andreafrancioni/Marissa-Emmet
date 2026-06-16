@@ -1,17 +1,19 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import Navigation from './components/Navigation.vue'
-import Footer from './components/Footer.vue'
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+import Navigation from "./components/Navigation.vue";
+import Footer from "./components/Footer.vue";
 
-const route = useRoute()
-const isSaveTheDate = computed(() => route.path === '/savethedate')
-const isRSVP = computed(() => route.path === '/rsvp')
+const route = useRoute();
+const isSaveTheDate = computed(() => route.path === "/savethedate");
+const isRSVP = computed(() => route.path === "/rsvp");
 </script>
 
 <template>
-  <div class="relative bg-[#F1F1EB] text-[#3D3D3D] selection:bg-[#E5C352] selection:text-white min-h-screen flex flex-col">
-    <Navigation v-if="!isSaveTheDate && !isRSVP" />
+  <div
+    class="relative bg-[#F1F1EB] text-[#3D3D3D] selection:bg-[#E5C352] selection:text-white min-h-screen flex flex-col"
+  >
+    <Navigation v-if="!isSaveTheDate" />
     <main class="flex-grow">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
@@ -31,15 +33,17 @@ html {
 
 /* Base styles for selecting elements */
 ::selection {
-  background-color: #E5C352;
-  color: #FFFFFF;
+  background-color: #e5c352;
+  color: #ffffff;
 }
 
 /* Global transitions */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
