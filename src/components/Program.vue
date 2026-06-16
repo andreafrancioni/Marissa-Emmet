@@ -5,56 +5,36 @@ import programImage from "../assets/program-tile.png";
 const days = [
   {
     day: 1,
-    date: "FRIDAY, JUNE 18TH",
+    date: "THURSDAY, APRIL 22, 2027",
     events: [
       {
-        time: "7:00 PM",
-        description:
-          "Transfers from the selected hotels to the Welcome Dinner venue.",
-      },
-      {
-        time: "7:30 PM",
-        description: "Welcome cocktail & Dinner",
-      },
-      {
-        time: "12:00 AM",
-        description:
-          "End of the evening and return transfers to the selected hotels",
-      },
+        title: "Welcome to Florence",
+        time: "9:00 PM – Midnight",
+        location: "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
+        description: "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together."
+      }
     ],
     image: programImage,
   },
   {
     day: 2,
-    date: "SATURDAY, JUNE 19TH",
+    date: "FRIDAY, APRIL 23, 2027",
     events: [
       {
-        time: "Morning",
-        description:
-          "Dedicated to curated experiences to discover the beauty of Florence.",
+        title: "Religious Ceremony",
+        time: "4:00 PM",
+        location: "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
+        description: "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations."
       },
       {
-        time: "1:30 PM",
-        description: "Lunch at the beach club.",
-      },
-      {
-        time: "7:00 PM",
-        description: "Main Celebration and Party at our favorite Masseria.",
-      },
+        title: "Wedding Reception & After-Party",
+        time: "Following Ceremony",
+        location: "Villa Mangiacane",
+        description: "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane."
+      }
     ],
     image: programImage,
-  },
-  {
-    day: 3,
-    date: "SUNDAY, JUNE 20TH",
-    events: [
-      {
-        time: "11:00 AM",
-        description: "Farewell Brunch and last dips in the sea.",
-      },
-    ],
-    image: programImage,
-  },
+  }
 ];
 
 const programSection = ref(null);
@@ -97,7 +77,7 @@ onUnmounted(() => {
       <!-- Main Title -->
       <div class="text-center mb-32">
         <h2 class="text-6xl md:text-8xl handwriting text-[#3D3D3D]">
-          Weekend Program
+          Schedule of Events
         </h2>
       </div>
 
@@ -142,23 +122,31 @@ onUnmounted(() => {
                   Day {{ day.day }}
                 </h3>
                 <h4
-                  class="text-2xl text-center font-serif tracking-widest text-[#3D3D3D] mb-8"
+                  class="text-2xl text-center font-serif tracking-widest text-[#3D3D3D] mb-12"
                   :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                 >
                   {{ day.date }}
                 </h4>
 
-                <ul class="space-y-6">
+                <ul class="space-y-10">
                   <li
                     v-for="(event, eIndex) in day.events"
                     :key="eIndex"
                     class="text-gray-600"
                   >
+                    <h5 v-if="event.title" class="text-xl font-serif text-[#3D3D3D] mb-2" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
+                      {{ event.title }}
+                    </h5>
                     <span
-                      class="block text-sm font-sans tracking-wide text-gray-400 mb-1 uppercase"
+                      class="block text-xs font-sans tracking-widest text-gray-500 mb-4 uppercase"
+                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                       >{{ event.time }}</span
                     >
-                    <p class="text-lg font-light leading-relaxed">
+                    <div v-if="event.location" class="mb-4 text-sm font-sans text-gray-500 whitespace-pre-line" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
+                      <span class="font-semibold block uppercase tracking-widest mb-1 text-[10px]">Location</span>
+                      {{ event.location }}
+                    </div>
+                    <p class="text-base font-light leading-relaxed whitespace-pre-line" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
                       {{ event.description }}
                     </p>
                   </li>

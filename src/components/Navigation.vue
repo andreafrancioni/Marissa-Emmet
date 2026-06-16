@@ -4,17 +4,17 @@ import { ref } from "vue";
 import logoImage from "../assets/solo_logo.png";
 
 const navLeft = [
-  { name: "HOME", href: "#welcome" },
-  { name: "RSVP", href: "#rsvp" },
-  { name: "SCHEDULE OF EVENTS", href: "#program" },
-  { name: "ATTIRE", href: "#dresscode" },
+  { name: "HOME", href: "/#welcome" },
+  { name: "RSVP", href: "/#rsvp" },
+  { name: "SCHEDULE OF EVENTS", href: "/#program" },
+  { name: "ATTIRE", href: "/#dresscode" },
 ];
 
 const navRight = [
-  { name: "YOUR STAY", href: "#accommodation" },
-  { name: "OUR FLORENCE", href: "#florence" },
-  { name: "CONTACT", href: "#contact" },
-  { name: "FAQ", href: "#faq" },
+  { name: "YOUR STAY", href: "/accommodation" },
+  { name: "OUR FLORENCE", href: "/florence" },
+  { name: "CONTACT", href: "/#contact" },
+  { name: "FAQ", href: "/#faq" },
 ];
 
 const isMenuOpen = ref(false);
@@ -27,35 +27,35 @@ const isMenuOpen = ref(false);
     <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
       <!-- Desktop Nav Left -->
       <div class="hidden lg:flex items-center justify-end space-x-8 flex-1">
-        <a
+        <router-link
           v-for="link in navLeft"
           :key="link.name"
-          :href="link.href"
+          :to="link.href"
           class="text-[10px] tracking-[0.2em] font-sans hover:text-gray-500 transition-colors uppercase"
         >
           {{ link.name }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Center Logo -->
       <div class="mx-4">
-        <a href="#" class="flex flex-col items-center">
+        <router-link to="/#welcome" class="flex flex-col items-center">
           <img :src="logoImage" alt="Emmet & Marissa" class="h-16 md:h-20" />
-        </a>
+        </router-link>
       </div>
 
       <!-- Desktop Nav Right -->
       <div
         class="hidden lg:flex items-center justify-start space-x-8 flex-1 justify-end"
       >
-        <a
+        <router-link
           v-for="link in navRight"
           :key="link.name"
-          :href="link.href"
+          :to="link.href"
           class="text-[10px] tracking-[0.2em] font-sans hover:text-gray-500 transition-colors uppercase"
         >
           {{ link.name }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Mobile Button -->
@@ -110,8 +110,8 @@ const isMenuOpen = ref(false);
 
           <!-- Menu Logo/Title -->
           <div class="mb-12 shrink-0">
-            <a
-              href="#"
+            <router-link
+              to="/#welcome"
               @click="isMenuOpen = false"
               class="flex flex-col items-center"
             >
@@ -119,20 +119,20 @@ const isMenuOpen = ref(false);
                 class="handwriting text-5xl text-[#3D3D3D] leading-none transform -rotate-1"
                 >Emmet & Marissa</span
               >
-            </a>
+            </router-link>
           </div>
 
           <!-- Links -->
           <div class="flex flex-col items-center space-y-6 overflow-y-auto">
-            <a
+            <router-link
               v-for="link in [...navLeft, ...navRight]"
               :key="link.name"
-              :href="link.href"
+              :to="link.href"
               @click="isMenuOpen = false"
               class="text-xl md:text-2xl tracking-[0.3em] font-sans uppercase hover:text-gray-500 transition-colors py-2"
             >
               {{ link.name }}
-            </a>
+            </router-link>
           </div>
 
           <!-- Decorative Element -->
