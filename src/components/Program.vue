@@ -10,9 +10,11 @@ const days = [
       {
         title: "Welcome to Florence",
         time: "9:00 PM – Midnight",
-        location: "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
-        description: "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together."
-      }
+        location:
+          "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
+        description:
+          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.",
+      },
     ],
     image: programImage,
   },
@@ -23,18 +25,36 @@ const days = [
       {
         title: "Religious Ceremony",
         time: "4:00 PM",
-        location: "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
-        description: "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations."
+        location:
+          "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
+        description:
+          "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
       },
       {
         title: "Wedding Reception & After-Party",
-        time: "Following Ceremony",
+        time: "From 6:00 PM onwards",
         location: "Villa Mangiacane",
-        description: "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane."
-      }
+        description:
+          "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane.",
+      },
     ],
     image: programImage,
-  }
+  },
+  {
+    day: 3,
+    date: "SATURDAY, APRIL 24, 2027",
+    events: [
+      {
+        title: "Farewell Brunch",
+        time: "11:30 AM - 2:30 PM",
+        location:
+          "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
+        description:
+          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*",
+      },
+    ],
+    image: programImage,
+  },
 ];
 
 const programSection = ref(null);
@@ -134,19 +154,41 @@ onUnmounted(() => {
                     :key="eIndex"
                     class="text-gray-600"
                   >
-                    <h5 v-if="event.title" class="text-xl font-serif text-[#3D3D3D] mb-2" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
+                    <h5
+                      v-if="event.title"
+                      class="text-xl font-serif text-[#3D3D3D] mb-2"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
+                    >
                       {{ event.title }}
                     </h5>
                     <span
                       class="block text-xs font-sans tracking-widest text-gray-500 mb-4 uppercase"
-                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
                       >{{ event.time }}</span
                     >
-                    <div v-if="event.location" class="mb-4 text-sm font-sans text-gray-500 whitespace-pre-line" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
-                      <span class="font-semibold block uppercase tracking-widest mb-1 text-[10px]">Location</span>
+                    <div
+                      v-if="event.location"
+                      class="mb-4 text-sm font-sans text-gray-500 whitespace-pre-line"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
+                    >
+                      <span
+                        class="font-semibold block uppercase tracking-widest mb-1 text-[10px]"
+                        >Location</span
+                      >
                       {{ event.location }}
                     </div>
-                    <p class="text-base font-light leading-relaxed whitespace-pre-line" :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'">
+                    <p
+                      class="text-base font-light leading-relaxed whitespace-pre-line"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
+                    >
                       {{ event.description }}
                     </p>
                   </li>
@@ -180,6 +222,4 @@ onUnmounted(() => {
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

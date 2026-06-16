@@ -13,8 +13,8 @@ const navLeft = [
 const navRight = [
   { name: "YOUR STAY", href: "/accommodation" },
   { name: "OUR FLORENCE", href: "/florence" },
-  { name: "CONTACT", href: "/#contact" },
   { name: "FAQ", href: "/#faq" },
+  { name: "CONTACT", href: "/#contact" },
 ];
 
 const isMenuOpen = ref(false);

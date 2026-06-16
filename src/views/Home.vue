@@ -1,10 +1,10 @@
 <script setup>
-import Hero from '../components/Hero.vue'
-import Program from '../components/Program.vue'
-import DressCode from '../components/DressCode.vue'
-import Contact from '../components/Contact.vue'
-import FAQ from '../components/FAQ.vue'
-import RSVPHome from '../components/RSVPHome.vue'
+import Hero from "../components/Hero.vue";
+import Program from "../components/Program.vue";
+import DressCode from "../components/DressCode.vue";
+import Contact from "../components/Contact.vue";
+import FAQ from "../components/FAQ.vue";
+import RSVPHome from "../components/RSVPHome.vue";
 </script>
 
 <template>
@@ -12,8 +12,8 @@ import RSVPHome from '../components/RSVPHome.vue'
     <Hero />
     <Program />
     <DressCode />
-    <Contact />
-    <FAQ />
     <RSVPHome />
+    <FAQ />
+    <Contact />
   </main>
 </template>
