@@ -11,7 +11,6 @@ import RSVPHome from "../components/RSVPHome.vue";
   <main>
     <Hero />
     <Program />
-    <DressCode />
     <RSVPHome />
     <FAQ />
     <Contact />

@@ -25,7 +25,7 @@ const codes = [
   <section id="dresscode" class="py-32 px-4 bg-[#F1F1EB]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-6xl md:text-8xl handwriting text-[#3D3D3D]">
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">
           Dress Code
         </h2>
       </div>
@@ -48,11 +48,11 @@ const codes = [
 
           <div class="space-y-4">
             <p
-              class="text-xs tracking-[0.2em] font-sans text-gray-400 uppercase font-bold"
+              class="text-xs tracking-[0.2em] font-menu text-gray-400 uppercase font-bold"
             >
               {{ code.event }}
             </p>
-            <h3 class="text-3xl font-serif text-[#3D3D3D]">{{ code.title }}</h3>
+            <h3 class="text-3xl font-title text-[#3D3D3D]">{{ code.title }}</h3>
             <p
               class="text-sm font-light text-gray-600 leading-relaxed max-w-[250px] mx-auto italic"
             >

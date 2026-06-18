@@ -55,7 +55,7 @@ const hotels = [
   <section id="accommodation" class="py-32 bg-[#F1F1EB] px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-6xl handwriting text-[#3D3D3D] m-4">Your Stay</h2>
+        <h2 class="text-6xl text-[#3D3D3D] m-4">Your Stay</h2>
         <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
       </div>
 
@@ -89,11 +89,11 @@ const hotels = [
           </div>
           <div class="w-full md:w-1/2 space-y-6 flex flex-col justify-center">
             <div>
-              <h3 class="text-2xl font-serif text-[#3D3D3D] mb-2">
+              <h3 class="text-2xl font-title text-[#3D3D3D] mb-2">
                 {{ hotel.name }}
               </h3>
               <p
-                class="text-xs tracking-wider font-sans text-gray-500 uppercase"
+                class="text-xs tracking-wider font-menu text-gray-500 uppercase"
               >
                 ADDRESS: {{ hotel.address }}
               </p>

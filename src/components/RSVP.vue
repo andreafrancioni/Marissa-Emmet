@@ -184,12 +184,12 @@ const submitForm = async () => {
           ></div>
 
           <h3
-            class="text-[10px] tracking-[0.4em] font-sans text-gray-500 uppercase mb-4 relative z-10"
+            class="text-[10px] tracking-[0.4em] font-menu text-gray-500 uppercase mb-4 relative z-10"
           >
             Confirm Attendance
           </h3>
           <h2
-            class="text-4xl md:text-6xl handwriting text-[#3D3B39] leading-tight relative z-10"
+            class="text-4xl md:text-6xl text-[#3D3B39] leading-tight relative z-10"
           >
             Emmet & Marissa<br />Wedding
           </h2>
@@ -203,7 +203,7 @@ const submitForm = async () => {
           v-if="isSuccess"
           class="text-center py-12 animate-in fade-in duration-700"
         >
-          <h3 class="text-2xl font-serif text-[#3D3B39] mb-4">Grazie Mille!</h3>
+          <h3 class="text-2xl font-title text-[#3D3B39] mb-4">Grazie Mille!</h3>
           <p class="text-lg text-gray-600 font-light italic">
             Your response has been recorded. We look forward to celebrating with
             you!
@@ -231,12 +231,7 @@ const submitForm = async () => {
           <div class="flex justify-center mb-12 space-x-4 md:space-x-8">
             <div v-for="step in 6" :key="step" class="relative">
               <div
-                :class="[
-                  'w-2 h-2 rounded-full transition-all duration-500',
-                  currentStep >= step
-                    ? 'bg-[#bda1c9] scale-125'
-                    : 'bg-gray-300',
-                ]"
+                :class="[ 'w-2 h-2 rounded-full transition-all duration-500', currentStep >= step ? 'bg-[#bda1c9] scale-125' : 'bg-gray-300', ]"
               ></div>
               <div
                 v-if="step < 6"
@@ -254,14 +249,14 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Contact Information
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Title</label
                     >
                     <input
@@ -273,7 +268,7 @@ const submitForm = async () => {
                   </div>
                   <div class="md:col-span-3 space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Full Name *</label
                     >
                     <input
@@ -286,7 +281,7 @@ const submitForm = async () => {
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Email *</label
                   >
                   <input
@@ -298,7 +293,7 @@ const submitForm = async () => {
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Mobile Number *</label
                   >
                   <input
@@ -313,14 +308,14 @@ const submitForm = async () => {
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Additional Guest
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Title</label
                     >
                     <input
@@ -332,7 +327,7 @@ const submitForm = async () => {
                   </div>
                   <div class="md:col-span-3 space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Full Name (Guest 2)</label
                     >
                     <input
@@ -352,7 +347,7 @@ const submitForm = async () => {
             >
               <div class="text-center space-y-6">
                 <h4
-                  class="text-sm font-serif text-[#3D3B39] uppercase tracking-[0.2em]"
+                  class="text-sm font-title text-[#3D3B39] uppercase tracking-[0.2em]"
                 >
                   Will you join us?
                 </h4>
@@ -409,17 +404,17 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Shipping Address for Invitation
                 </h4>
-                <p class="text-[10px] text-gray-400 italic font-sans mb-4">
+                <p class="text-[10px] text-gray-400 italic font-menu mb-4">
                   For the delivery of your formal invitation suite
                 </p>
 
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Name *</label
                   >
                   <input
@@ -431,7 +426,7 @@ const submitForm = async () => {
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Street Address *</label
                   >
                   <input
@@ -444,7 +439,7 @@ const submitForm = async () => {
                 <div class="grid grid-cols-2 gap-4">
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >City *</label
                     >
                     <input
@@ -456,7 +451,7 @@ const submitForm = async () => {
                   </div>
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Postal Code *</label
                     >
                     <input
@@ -469,7 +464,7 @@ const submitForm = async () => {
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Country *</label
                   >
                   <input
@@ -481,7 +476,7 @@ const submitForm = async () => {
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Delivery Notes</label
                   >
                   <input
@@ -501,14 +496,14 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Travel Information
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Arrival Date *</label
                     >
                     <input
@@ -520,7 +515,7 @@ const submitForm = async () => {
                   </div>
                   <div class="space-y-2">
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                       >Departure Date *</label
                     >
                     <input
@@ -535,13 +530,13 @@ const submitForm = async () => {
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Accommodation
                 </h4>
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Kindly indicate the hotel where you will be staying
                     *</label
                   >
@@ -563,7 +558,7 @@ const submitForm = async () => {
             >
               <div class="space-y-8">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Event Attendance
                 </h4>
@@ -571,11 +566,11 @@ const submitForm = async () => {
                 <!-- Welcome Evening -->
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
-                    <h5 class="text-base font-serif text-[#3D3B39]">
+                    <h5 class="text-base font-title text-[#3D3B39]">
                       Welcome to Florence
                     </h5>
                     <p
-                      class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
+                      class="text-[10px] text-gray-400 uppercase tracking-wider font-menu"
                     >
                       Thursday, April 22, 2027 at 9:00 PM
                     </p>
@@ -617,7 +612,7 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans mb-1"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
@@ -632,11 +627,11 @@ const submitForm = async () => {
                 <!-- Wedding Day -->
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
-                    <h5 class="text-base font-serif text-[#3D3B39]">
+                    <h5 class="text-base font-title text-[#3D3B39]">
                       Wedding Day
                     </h5>
                     <p
-                      class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
+                      class="text-[10px] text-gray-400 uppercase tracking-wider font-menu"
                     >
                       Friday, April 23, 2027 at 4:00 PM
                     </p>
@@ -678,7 +673,7 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans mb-1"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
@@ -693,11 +688,11 @@ const submitForm = async () => {
                 <!-- Farewell Poolside Brunch -->
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
-                    <h5 class="text-base font-serif text-[#3D3B39]">
+                    <h5 class="text-base font-title text-[#3D3B39]">
                       Farewell Poolside Brunch
                     </h5>
                     <p
-                      class="text-[10px] text-gray-400 uppercase tracking-wider font-sans"
+                      class="text-[10px] text-gray-400 uppercase tracking-wider font-menu"
                     >
                       Saturday, April 24, 2027 at 11:30 AM
                     </p>
@@ -739,7 +734,7 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans mb-1"
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
@@ -760,17 +755,17 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-serif text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Dietary Requirements
                 </h4>
-                <p class="text-[10px] text-gray-400 italic font-sans italic">
+                <p class="text-[10px] text-gray-400 italic font-menu italic">
                   We kindly ask you to inform us of any dietary requirements:
                 </p>
 
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Food allergies (medical) *</label
                   >
                   <textarea
@@ -783,7 +778,7 @@ const submitForm = async () => {
 
                 <div class="space-y-2">
                   <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-sans"
+                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
                     >Dietary preferences (vegetarian, vegan, etc.)</label
                   >
                   <textarea
@@ -799,7 +794,7 @@ const submitForm = async () => {
             <!-- Error Message -->
             <p
               v-if="errorMessage"
-              class="text-xs text-red-500 font-sans tracking-wide text-center uppercase"
+              class="text-xs text-red-500 font-menu tracking-wide text-center uppercase"
             >
               {{ errorMessage }}
             </p>
@@ -812,7 +807,7 @@ const submitForm = async () => {
                 v-if="currentStep > 1"
                 type="button"
                 @click="prevStep"
-                class="text-[10px] tracking-[0.3em] font-sans uppercase text-gray-400 hover:text-[#3D3B39] transition-colors"
+                class="text-[10px] tracking-[0.3em] font-menu uppercase text-gray-400 hover:text-[#3D3B39] transition-colors"
               >
                 Back
               </button>
@@ -822,7 +817,7 @@ const submitForm = async () => {
                 v-if="currentStep < 6"
                 type="button"
                 @click="nextStep"
-                class="px-12 py-4 bg-[#3D3B39] text-white text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-[#D5C6DC] hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                class="px-12 py-4 bg-[#3D3B39] text-white text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-[#D5C6DC] hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 {{
                   currentStep === 2 && form.attending === "no"
@@ -835,7 +830,7 @@ const submitForm = async () => {
                 v-else
                 type="submit"
                 :disabled="isSubmitting"
-                class="px-12 py-4 bg-[#D5C6DC] text-[#3D3B39] text-[10px] tracking-[0.3em] font-sans uppercase hover:bg-white hover:text-[#3D3B39] rounded-[5px] shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                class="px-12 py-4 bg-[#D5C6DC] text-[#3D3B39] text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-white hover:text-[#3D3B39] rounded-[5px] shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {{ isSubmitting ? "Sending..." : "Confirm RSVP" }}
               </button>
@@ -844,7 +839,7 @@ const submitForm = async () => {
         </div>
 
         <p
-          class="text-center mt-12 text-[9px] tracking-[0.2em] font-sans text-gray-400 uppercase"
+          class="text-center mt-12 text-[9px] tracking-[0.2em] font-menu text-gray-400 uppercase"
         >
           Need help?
           <a

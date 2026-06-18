@@ -18,7 +18,7 @@ const goToRSVP = () => {
 
     <div class="relative z-10 max-w-2xl px-6 flex flex-col items-center">
       <p
-        class="text-xl md:text-2xl font-serif italic text-[#3D3B39] leading-relaxed mb-6"
+        class="text-xl md:text-2xl font-title italic text-[#3D3B39] leading-relaxed mb-6"
       >
         We can't wait to welcome you to Florence and
         <br class="hidden md:block" />
@@ -26,19 +26,19 @@ const goToRSVP = () => {
         celebration with you.
       </p>
 
-      <p class="text-xl md:text-2xl font-serif italic text-[#3D3B39] mb-6">
+      <p class="text-xl md:text-2xl font-title italic text-[#3D3B39] mb-6">
         Thank you for being part of it !
       </p>
 
-      <p class="text-xl md:text-2xl font-serif italic text-[#3D3B39] mb-6">
+      <p class="text-xl md:text-2xl font-title italic text-[#3D3B39] mb-6">
         With love !
       </p>
 
-      <h2 class="text-5xl md:text-7xl handwriting text-[#3D3B39] mb-16">
+      <h2 class="text-5xl md:text-7xl text-[#3D3B39] mb-16">
         Emmet and Marissa
       </h2>
 
-      <p class="text-lg md:text-xl font-sans text-[#3D3B39] mb-6">
+      <p class="text-lg md:text-xl font-menu text-[#3D3B39] mb-6">
         Click here to provide your participation details.
       </p>
 
@@ -54,8 +54,4 @@ const goToRSVP = () => {
 
 <style scoped>
 /* Based on the image and general styles from RSVP.vue */
-.handwriting {
-  font-family:
-    "Rouge Script", cursive; /* Used in RSVP.vue if imported, or default handwriting */
-}
 </style>

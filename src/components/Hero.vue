@@ -23,7 +23,7 @@
 
         <div class="flex flex-col items-center">
           <h2
-            class="handwriting text-7xl md:text-9xl text-[#3D3D3D] mb-4 transform -rotate-1"
+            class="text-7xl md:text-9xl text-[#3D3D3D] mb-4 transform -rotate-1"
           >
             Emmet & Marissa
           </h2>
@@ -36,12 +36,12 @@
 
       <div class="space-y-4 my-8">
         <p
-          class="text-sm md:text-lg tracking-[0.3em] font-sans uppercase text-[#3D3D3D]"
+          class="text-sm md:text-lg tracking-[0.3em] font-menu uppercase text-[#3D3D3D]"
         >
           JUNE 18–20, 2027
         </p>
         <p
-          class="text-sm md:text-lg tracking-[0.3em] font-sans uppercase text-[#3D3D3D]/70"
+          class="text-sm md:text-lg tracking-[0.3em] font-menu uppercase text-[#3D3D3D]/70"
         >
           FLORENCE, ITALY
         </p>
@@ -53,12 +53,12 @@
   <section class="bg-[#F1F1EB] py-16 px-4">
     <div class="max-w-2xl mx-auto text-center space-y-6 animate-fade-in-up">
       <p
-        class="text-xs md:text-sm tracking-[0.1em] font-sans text-gray-500 uppercase"
+        class="text-xs md:text-sm tracking-[0.1em] font-menu text-gray-500 uppercase"
       >
         Dear Friends,
       </p>
       <p
-        class="text-lg md:text-xl font-serif leading-relaxed text-[#3D3D3D]/80"
+        class="text-lg md:text-xl font-title leading-relaxed text-[#3D3D3D]/80"
       >
         We are delighted to share with you the program for our celebration
         weekend this August in Florence, Italy. <br class="hidden md:block" />

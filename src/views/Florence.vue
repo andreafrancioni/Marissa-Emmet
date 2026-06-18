@@ -136,7 +136,7 @@ const sections = [
   <section id="florence" class="py-24 px-4 bg-[#F1F1EB]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-6xl handwriting text-[#3D3D3D] m-4">
+        <h2 class="text-6xl text-[#3D3D3D] m-4">
           Our Favorite Places
         </h2>
         <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
@@ -155,7 +155,7 @@ const sections = [
       <div class="space-y-24">
         <div v-for="(section, sIndex) in sections" :key="sIndex">
           <h3
-            class="text-3xl font-serif italic text-center text-[#3D3D3D] mb-4"
+            class="text-3xl font-title italic text-center text-[#3D3D3D] mb-4"
           >
             {{ section.title }}
           </h3>
@@ -173,7 +173,7 @@ const sections = [
               :key="pIndex"
               class="space-y-3 text-center md:text-left"
             >
-              <h4 class="text-xl font-serif text-[#3D3D3D]">
+              <h4 class="text-xl font-title text-[#3D3D3D]">
                 {{ place.name }}
               </h4>
               <p class="italic text-[#3D3D3D]/80 font-light leading-relaxed">
@@ -181,7 +181,7 @@ const sections = [
               </p>
               <div v-if="place.link" class="pt-2">
                 <span
-                  class="text-xs font-sans tracking-widest text-gray-400 uppercase block mb-1"
+                  class="text-xs font-menu tracking-widest text-gray-400 uppercase block mb-1"
                   >For more information, visit:</span
                 >
                 <a
@@ -199,11 +199,11 @@ const sections = [
 
         <div class="text-center max-w-3xl mx-auto mt-20">
           <h3
-            class="text-3xl font-serif italic text-center text-[#3D3D3D] mb-4"
+            class="text-3xl font-title italic text-center text-[#3D3D3D] mb-4"
           >
             Need Help Planning?
           </h3>
-          <p class="text-lg font-serif text-[#3D3D3D] mb-6">
+          <p class="text-lg font-title text-[#3D3D3D] mb-6">
             If you would like assistance arranging private visit, wine tastings,
             transportation, cooking classes, or bespoke experiences throughout
             Florence and Tuscany, our concierge team would be pleased to assist.

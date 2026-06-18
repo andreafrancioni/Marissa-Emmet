@@ -96,7 +96,7 @@ onUnmounted(() => {
     <div class="max-w-6xl mx-auto">
       <!-- Main Title -->
       <div class="text-center mb-32">
-        <h2 class="text-6xl md:text-8xl handwriting text-[#3D3D3D]">
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">
           Schedule of Events
         </h2>
       </div>
@@ -128,21 +128,17 @@ onUnmounted(() => {
             <!-- Content Column -->
             <div
               class="w-full md:w-1/2 flex flex-col"
-              :class="
-                index % 2 === 0
-                  ? 'md:items-end md:text-right'
-                  : 'md:items-start md:text-left'
-              "
+              :class="index % 2 === 0 ? 'md:items-end md:text-right' : 'md:items-start md:text-left'"
             >
               <div class="max-w-md w-full">
                 <h3
-                  class="text-6xl text-center handwriting text-[#3D3D3D] mb-4"
+                  class="text-6xl text-center text-[#3D3D3D] mb-4"
                   :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                 >
                   Day {{ day.day }}
                 </h3>
                 <h4
-                  class="text-2xl text-center font-serif tracking-widest text-[#3D3D3D] mb-12"
+                  class="text-2xl text-center font-title tracking-widest text-[#3D3D3D] mb-12"
                   :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                 >
                   {{ day.date }}
@@ -156,26 +152,20 @@ onUnmounted(() => {
                   >
                     <h5
                       v-if="event.title"
-                      class="text-xl font-serif text-[#3D3D3D] mb-2"
-                      :class="
-                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                      "
+                      class="text-xl font-title text-[#3D3D3D] mb-2"
+                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                     >
                       {{ event.title }}
                     </h5>
                     <span
-                      class="block text-xs font-sans tracking-widest text-gray-500 mb-4 uppercase"
-                      :class="
-                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                      "
+                      class="block text-xs font-menu tracking-widest text-gray-500 mb-4 uppercase"
+                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                       >{{ event.time }}</span
                     >
                     <div
                       v-if="event.location"
-                      class="mb-4 text-sm font-sans text-gray-500 whitespace-pre-line"
-                      :class="
-                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                      "
+                      class="mb-4 text-sm font-menu text-gray-500 whitespace-pre-line"
+                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                     >
                       <span
                         class="font-semibold block uppercase tracking-widest mb-1 text-[10px]"
@@ -185,9 +175,7 @@ onUnmounted(() => {
                     </div>
                     <p
                       class="text-base font-light leading-relaxed whitespace-pre-line"
-                      :class="
-                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                      "
+                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
                     >
                       {{ event.description }}
                     </p>

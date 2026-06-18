@@ -114,7 +114,7 @@ const faqs = [
   <section id="faq" class="py-24 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-6xl md:text-8xl handwriting text-[#3D3D3D] mb-4">
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">
           Faq
         </h2>
         <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
@@ -131,7 +131,7 @@ const faqs = [
             @click="toggleAccordion(index)"
             class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none"
           >
-            <h3 class="text-xl font-serif text-[#3D3D3D] pr-8">
+            <h3 class="text-xl font-title text-[#3D3D3D] pr-8">
               {{ faq.question }}
             </h3>
             <span class="text-[#D5C6DC] transition-transform duration-300 transform" :class="activeIndex === index ? 'rotate-180' : ''">

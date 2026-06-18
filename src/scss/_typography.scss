@@ -1,0 +1,50 @@
+// Typography and Fonts configuration
+
+// 1. Font Faces
+@font-face {
+  font-family: 'Canela';
+  src: url('../assets/fonts/canela-Light-TRIAL.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../assets/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('../assets/fonts/OPTIMA.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// 2. SCSS Variables
+$font-title: 'Canela';
+$font-body: 'Cormorant Garamond', serif;
+$font-menu: 'Optima', sans-serif;
+
+// 3. Typographic Rules
+
+// Titoli (Canela Light)
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: $font-title;
+  font-weight: 300;
+}
+
+// Corpo testo (Cormorant Garamond Regular)
+body, p, .body-text {
+  font-family: $font-body;
+  font-weight: 400;
+}
+
+// Menu e dettagli (Optima, small-caps)
+nav, .menu, .details, .small-caps {
+  font-family: $font-menu;
+  font-variant: small-caps;
+  /* Option for better small-caps alignment if needed: */
+  /* text-transform: lowercase; */
+}

@@ -31,7 +31,7 @@ const isMenuOpen = ref(false);
           v-for="link in navLeft"
           :key="link.name"
           :to="link.href"
-          class="text-[10px] tracking-[0.2em] font-sans hover:text-gray-500 transition-colors uppercase"
+          class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
         >
           {{ link.name }}
         </router-link>
@@ -52,7 +52,7 @@ const isMenuOpen = ref(false);
           v-for="link in navRight"
           :key="link.name"
           :to="link.href"
-          class="text-[10px] tracking-[0.2em] font-sans hover:text-gray-500 transition-colors uppercase"
+          class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
         >
           {{ link.name }}
         </router-link>
@@ -116,7 +116,7 @@ const isMenuOpen = ref(false);
               class="flex flex-col items-center"
             >
               <span
-                class="handwriting text-5xl text-[#3D3D3D] leading-none transform -rotate-1"
+                class="text-5xl text-[#3D3D3D] leading-none transform -rotate-1"
                 >Emmet & Marissa</span
               >
             </router-link>
@@ -129,7 +129,7 @@ const isMenuOpen = ref(false);
               :key="link.name"
               :to="link.href"
               @click="isMenuOpen = false"
-              class="text-xl md:text-2xl tracking-[0.3em] font-sans uppercase hover:text-gray-500 transition-colors py-2"
+              class="text-xl md:text-2xl tracking-[0.3em] font-menu uppercase hover:text-gray-500 transition-colors py-2"
             >
               {{ link.name }}
             </router-link>
