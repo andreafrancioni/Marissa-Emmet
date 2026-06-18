@@ -162,7 +162,7 @@ const submitForm = async () => {
 <template>
   <section
     id="rsvp"
-    class="relative min-h-screen py-24 bg-[#FEF6FA] overflow-hidden flex items-center justify-center"
+    class="relative min-h-screen py-24 bg-primary overflow-hidden flex items-center justify-center"
   >
     <div class="relative z-10 w-full max-w-2xl px-6">
       <div
@@ -194,7 +194,7 @@ const submitForm = async () => {
             Emmet & Marissa<br />Wedding
           </h2>
           <div
-            class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6 relative z-10"
+            class="w-12 h-[1px] bg-accent mx-auto mt-6 relative z-10"
           ></div>
         </div>
 
@@ -231,12 +231,12 @@ const submitForm = async () => {
           <div class="flex justify-center mb-12 space-x-4 md:space-x-8">
             <div v-for="step in 6" :key="step" class="relative">
               <div
-                :class="[ 'w-2 h-2 rounded-full transition-all duration-500', currentStep >= step ? 'bg-[#bda1c9] scale-125' : 'bg-gray-300', ]"
+                :class="[ 'w-2 h-2 rounded-full transition-all duration-500', currentStep >= step ? 'bg-accent scale-125' : 'bg-gray-300', ]"
               ></div>
               <div
                 v-if="step < 6"
                 class="absolute top-1/2 left-full w-4 md:w-8 h-[1px] -translate-y-1/2"
-                :class="currentStep > step ? 'bg-[#bda1c9]' : 'bg-gray-200'"
+                :class="currentStep > step ? 'bg-accent' : 'bg-gray-200'"
               ></div>
             </div>
           </div>
@@ -817,7 +817,7 @@ const submitForm = async () => {
                 v-if="currentStep < 6"
                 type="button"
                 @click="nextStep"
-                class="px-12 py-4 bg-[#3D3B39] text-white text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-[#D5C6DC] hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                class="px-12 py-4 bg-text text-white text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-accent hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 {{
                   currentStep === 2 && form.attending === "no"
@@ -830,7 +830,7 @@ const submitForm = async () => {
                 v-else
                 type="submit"
                 :disabled="isSubmitting"
-                class="px-12 py-4 bg-[#D5C6DC] text-[#3D3B39] text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-white hover:text-[#3D3B39] rounded-[5px] shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                class="px-12 py-4 bg-accent text-[#3D3B39] text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-white hover:text-[#3D3B39] rounded-[5px] shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {{ isSubmitting ? "Sending..." : "Confirm RSVP" }}
               </button>

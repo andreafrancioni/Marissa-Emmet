@@ -52,11 +52,11 @@ const hotels = [
 </script>
 
 <template>
-  <section id="accommodation" class="py-32 bg-[#F1F1EB] px-4 overflow-hidden">
+  <section id="accommodation" class="py-32 bg-primary px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-6xl text-[#3D3D3D] m-4">Your Stay</h2>
-        <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
+        <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
 
       <div

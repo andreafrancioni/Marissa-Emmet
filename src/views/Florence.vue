@@ -133,13 +133,13 @@ const sections = [
 </script>
 
 <template>
-  <section id="florence" class="py-24 px-4 bg-[#F1F1EB]">
+  <section id="florence" class="py-24 px-4 bg-primary">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-6xl text-[#3D3D3D] m-4">
           Our Favorite Places
         </h2>
-        <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
+        <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
 
       <div

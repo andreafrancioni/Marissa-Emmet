@@ -22,7 +22,7 @@ const isMenuOpen = ref(false);
 
 <template>
   <nav
-    class="fixed top-0 left-0 w-full z-50 bg-[#F1F1EB]/80 backdrop-blur-sm border-b border-[#3D3D3D]/10"
+    class="fixed top-0 left-0 w-full z-50 bg-primary/80 backdrop-blur-sm border-b border-[#3D3D3D]/10"
   >
     <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
       <!-- Desktop Nav Left -->
@@ -85,7 +85,7 @@ const isMenuOpen = ref(false);
       <transition name="slide">
         <div
           v-if="isMenuOpen"
-          class="fixed inset-0 bg-[#F1F1EB] z-[9999] flex flex-col items-center justify-center min-h-screen w-screen overflow-y-auto py-20"
+          class="fixed inset-0 bg-primary z-[9999] flex flex-col items-center justify-center min-h-screen w-screen overflow-y-auto py-20"
         >
           <!-- Close Button -->
           <button
@@ -138,7 +138,7 @@ const isMenuOpen = ref(false);
           <!-- Decorative Element -->
           <div class="mt-12 opacity-30 shrink-0">
             <span
-              class="block w-3 h-3 rotate-45 bg-[#3D3D3D] rounded-sm"
+              class="block w-3 h-3 rotate-45 bg-text rounded-sm"
             ></span>
           </div>
         </div>

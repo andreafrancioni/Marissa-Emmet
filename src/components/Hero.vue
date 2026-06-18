@@ -1,3 +1,34 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+
+const weddingDate = new Date("2027-06-18T00:00:00");
+const days = ref(0);
+const hours = ref(0);
+const minutes = ref(0);
+const seconds = ref(0);
+let timer = null;
+
+const calculateTimeLeft = () => {
+  const difference = weddingDate.getTime() - new Date().getTime();
+
+  if (difference > 0) {
+    days.value = Math.floor(difference / (1000 * 60 * 60 * 24));
+    hours.value = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    minutes.value = Math.floor((difference / 1000 / 60) % 60);
+    seconds.value = Math.floor((difference / 1000) % 60);
+  }
+};
+
+onMounted(() => {
+  calculateTimeLeft();
+  timer = setInterval(calculateTimeLeft, 1000);
+});
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer);
+});
+</script>
+
 <template>
   <section
     id="welcome"
@@ -6,51 +37,76 @@
     <!-- Hero Video Background -->
     <div class="absolute inset-0 w-full h-full z-0">
       <video autoplay loop muted playsinline class="w-full h-full object-cover">
-        <source src="../assets/15470637_3840_2160_60fps.mp4" type="video/mp4" />
+        <source src="../assets/villa-mangiacane.mp4" type="video/mp4" />
       </video>
-      <div class="absolute inset-0 bg-[#F1F1EB]/65"></div>
+      <div class="absolute inset-0 bg-primary/65"></div>
     </div>
 
     <!-- Main Content centered over Video -->
     <div
       class="relative z-10 text-center max-w-4xl mx-auto px-4 animate-fade-in-up"
     >
-      <div class="flex items-center justify-center md:space-x-12 mb-4">
-        <!-- Decorative Diamond Icons -->
-        <span
-          class="hidden md:block w-3 h-3 rotate-45 bg-[#3D3D3D]/60 rounded-sm"
-        ></span>
-
-        <div class="flex flex-col items-center">
-          <h2
-            class="text-7xl md:text-9xl text-[#3D3D3D] mb-4 transform -rotate-1"
-          >
-            Emmet & Marissa
-          </h2>
-        </div>
-
-        <span
-          class="hidden md:block w-3 h-3 rotate-45 bg-[#3D3D3D]/60 rounded-sm"
-        ></span>
+      <div class="flex items-center justify-center mb-4">
+        <img
+          src="../assets/testo.png"
+          alt="Emmet & Marissa"
+          class="hero-image w-full max-w-xl md:max-w-3xl h-auto"
+        />
       </div>
 
-      <div class="space-y-4 my-8">
-        <p
-          class="text-sm md:text-lg tracking-[0.3em] font-menu uppercase text-[#3D3D3D]"
-        >
-          JUNE 18–20, 2027
-        </p>
-        <p
-          class="text-sm md:text-lg tracking-[0.3em] font-menu uppercase text-[#3D3D3D]/70"
-        >
-          FLORENCE, ITALY
-        </p>
+      <!-- Countdown -->
+      <div class="flex justify-center items-center gap-4 md:gap-8 mt-12">
+        <div class="flex flex-col items-center">
+          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+            days
+          }}</span>
+          <span
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            >Days</span
+          >
+        </div>
+        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+          :
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+            hours
+          }}</span>
+          <span
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            >Hours</span
+          >
+        </div>
+        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+          :
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+            minutes
+          }}</span>
+          <span
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            >Mins</span
+          >
+        </div>
+        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+          :
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+            seconds
+          }}</span>
+          <span
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            >Secs</span
+          >
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Content below Hero -->
-  <section class="bg-[#F1F1EB] py-16 px-4">
+  <section class="bg-primary py-16 px-4">
     <div class="max-w-2xl mx-auto text-center space-y-6 animate-fade-in-up">
       <p
         class="text-xs md:text-sm tracking-[0.1em] font-menu text-gray-500 uppercase"
@@ -88,5 +144,9 @@
 
 .transform {
   will-change: transform;
+}
+
+.hero-image {
+  filter: brightness(0) invert(0);
 }
 </style>

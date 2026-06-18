@@ -22,7 +22,7 @@ const codes = [
 </script>
 
 <template>
-  <section id="dresscode" class="py-32 px-4 bg-[#F1F1EB]">
+  <section id="dresscode" class="py-32 px-4 bg-primary">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">

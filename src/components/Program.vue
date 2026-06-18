@@ -91,7 +91,7 @@ onUnmounted(() => {
   <section
     id="program"
     ref="programSection"
-    class="py-24 px-4 bg-[#F1F1EB] overflow-hidden"
+    class="py-24 px-4 bg-primary overflow-hidden"
   >
     <div class="max-w-6xl mx-auto">
       <!-- Main Title -->
@@ -104,13 +104,13 @@ onUnmounted(() => {
       <div class="relative">
         <!-- Central Timeline Line -->
         <div
-          class="absolute left-1/2 top-0 bottom-0 w-px bg-[#3D3D3D]/10 -translate-x-1/2 hidden md:block"
+          class="absolute left-1/2 top-0 bottom-0 w-px bg-text/10 -translate-x-1/2 hidden md:block"
         >
           <!-- Moving Sun Element Container -->
           <div class="absolute top-0 bottom-0 left-0 w-full">
             <!-- The Sun itself, absolutely positioned based on progress -->
             <div
-              class="absolute left-1/2 -ml-4 z-30 flex items-center justify-center bg-[#F1F1EB] w-8 h-8 rounded-full"
+              class="absolute left-1/2 -ml-4 z-30 flex items-center justify-center bg-primary w-8 h-8 rounded-full"
               :style="{ top: `${sunProgress}%` }"
             >
               <span class="text-2xl leading-none">☀️</span>

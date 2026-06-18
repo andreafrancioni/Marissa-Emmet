@@ -1,5 +1,5 @@
 <template>
-  <section id="glance" class="py-32 px-4 bg-[#F1F1EB]">
+  <section id="glance" class="py-32 px-4 bg-primary">
     <div class="max-w-4xl mx-auto space-y-24">
       <div class="text-center">
         <h3 class="text-xs tracking-[0.4em] font-menu text-gray-500 uppercase mb-4">Good to Know</h3>
@@ -8,7 +8,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 px-4">
         <div class="space-y-6">
-           <h3 class="text-xl font-title text-[#3D3D3D] flex items-center justify-between border-b pb-4 border-[#3D3D3D]/10 uppercase tracking-widest text-sm font-menu mb-4">Travel <span class="h-px bg-[#3D3D3D]/30 flex-1 ml-4"></span></h3>
+           <h3 class="text-xl font-title text-[#3D3D3D] flex items-center justify-between border-b pb-4 border-[#3D3D3D]/10 uppercase tracking-widest text-sm font-menu mb-4">Travel <span class="h-px bg-text/30 flex-1 ml-4"></span></h3>
            <p class="text-sm font-light text-gray-600 leading-relaxed uppercase tracking-widest text-[10px] items-center mb-2 font-bold font-menu">Airports</p>
             <p class="text-sm font-light text-gray-600 leading-relaxed mb-4">Florence Marco Polo (VCE) is the primary airport. <br/> Treviso (TSF) is a secondary option for low-cost carriers.</p>
             
@@ -17,7 +17,7 @@
         </div>
 
         <div class="space-y-6">
-           <h3 class="text-xl font-title text-[#3D3D3D] flex items-center justify-between border-b pb-4 border-[#3D3D3D]/10 uppercase tracking-widest text-sm font-menu mb-4">The Region <span class="h-px bg-[#3D3D3D]/30 flex-1 ml-4"></span></h3>
+           <h3 class="text-xl font-title text-[#3D3D3D] flex items-center justify-between border-b pb-4 border-[#3D3D3D]/10 uppercase tracking-widest text-sm font-menu mb-4">The Region <span class="h-px bg-text/30 flex-1 ml-4"></span></h3>
            <p class="text-sm font-light text-gray-600 leading-relaxed uppercase tracking-widest text-[10px] items-center mb-2 font-bold font-menu">Weather</p>
             <p class="text-sm font-light text-gray-600 leading-relaxed mb-4">June in Florence is pleasant and sunny, with temperatures between 18°C and 25°C (64°F - 77°F).</p>
             

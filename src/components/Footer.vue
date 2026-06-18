@@ -1,7 +1,7 @@
 <template>
   <footer
     id="contact"
-    class="py-32 px-4 bg-[#F1F1EB] border-t border-[#3D3D3D]/10"
+    class="py-32 px-4 bg-primary border-t border-[#3D3D3D]/10"
   >
     <div class="max-w-7xl mx-auto flex flex-col items-center gap-12">
       <h1 class="text-6xl text-center md:text-left text-[#3D3D3D]">
@@ -22,7 +22,7 @@
           >
         </div>
 
-        <div class="w-12 h-px bg-[#3D3D3D]/30 hidden md:block"></div>
+        <div class="w-12 h-px bg-text/30 hidden md:block"></div>
 
         <div class="space-y-4">
           <p

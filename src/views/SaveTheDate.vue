@@ -193,7 +193,7 @@ const goToRSVP = () => {
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-color: #fef6fa; // Deep dark background
+  background-color: var(--color-primary); // Deep dark background
   overflow: hidden;
   z-index: 100;
   display: flex;
@@ -307,7 +307,7 @@ const goToRSVP = () => {
   transform: translate(-50%, -50%);
   width: 320px;
   height: 180px;
-  background: #fef6fa;
+  background: var(--color-primary);
   z-index: 15;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;

@@ -11,7 +11,7 @@ const isRSVP = computed(() => route.path === "/rsvp");
 
 <template>
   <div
-    class="relative bg-[#F1F1EB] text-[#3D3D3D] selection:bg-[#E5C352] selection:text-white min-h-screen flex flex-col"
+    class="relative bg-primary text-[#3D3D3D] selection:bg-accent selection:text-white min-h-screen flex flex-col"
   >
     <Navigation v-if="!isSaveTheDate" />
     <main class="flex-grow">

@@ -117,7 +117,7 @@ const faqs = [
         <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">
           Faq
         </h2>
-        <div class="w-12 h-[1px] bg-[#D5C6DC] mx-auto mt-6"></div>
+        <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
       
       <div class="space-y-4">
@@ -125,7 +125,7 @@ const faqs = [
           v-for="(faq, index) in faqs" 
           :key="index"
           class="border border-[#D5C6DC] rounded-xl overflow-hidden transition-all duration-300"
-          :class="activeIndex === index ? 'shadow-md bg-[#F9F7FA]' : 'bg-white hover:bg-gray-50'"
+          :class="activeIndex === index ? 'shadow-md bg-primary' : 'bg-white hover:bg-gray-50'"
         >
           <button 
             @click="toggleAccordion(index)"

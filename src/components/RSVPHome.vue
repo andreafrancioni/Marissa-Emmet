@@ -12,7 +12,7 @@ const goToRSVP = () => {
 <template>
   <section
     id="rsvp"
-    class="relative min-h-screen py-24 bg-[#FEF6FA] overflow-hidden flex flex-col items-center justify-center text-center"
+    class="relative min-h-screen py-24 bg-primary overflow-hidden flex flex-col items-center justify-center text-center"
   >
     <!-- Decorative Background Optional -->
 
@@ -44,7 +44,7 @@ const goToRSVP = () => {
 
       <button
         @click="goToRSVP"
-        class="border border-[#3D3B39] px-8 py-3 text-sm tracking-[0.2em] uppercase hover:bg-[#3D3B39] hover:text-white transition-colors duration-300"
+        class="border border-[#3D3B39] px-8 py-3 text-sm tracking-[0.2em] uppercase hover:bg-text hover:text-white transition-colors duration-300"
       >
         RSVP
       </button>
