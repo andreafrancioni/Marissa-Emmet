@@ -2,9 +2,16 @@
 
 // 1. Font Faces
 @font-face {
-  font-family: 'Canela';
-  src: url('../assets/fonts/canela-Light-TRIAL.otf') format('opentype');
-  font-weight: 300;
+  font-family: 'Priori Serif';
+  src: url('../assets/fonts/PrioriSerRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Priori Serif';
+  src: url('../assets/fonts/PrioriSerBold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -23,16 +30,16 @@
 }
 
 // 2. SCSS Variables
-$font-title: 'Canela';
+$font-title: 'Priori Serif';
 $font-body: 'Cormorant Garamond', serif;
 $font-menu: 'Optima', sans-serif;
 
 // 3. Typographic Rules
 
-// Titoli (Canela Light)
+// Titoli (Priori Serif)
 h1, h2, h3, h4, h5, h6, .title {
   font-family: $font-title;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 // Corpo testo (Cormorant Garamond Regular)
