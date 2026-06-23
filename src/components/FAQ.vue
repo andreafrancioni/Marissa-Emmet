@@ -113,14 +113,14 @@ const faqs = [
 <template>
   <section id="faq" class="py-24 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">
           Faq
         </h2>
         <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
       
-      <div class="space-y-4">
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
         <div 
           v-for="(faq, index) in faqs" 
           :key="index"

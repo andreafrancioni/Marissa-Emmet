@@ -135,7 +135,7 @@ const sections = [
 <template>
   <section id="florence" class="py-24 px-4 bg-primary">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-6xl text-[#3D3D3D] m-4">
           Our Favorite Places
         </h2>
@@ -144,6 +144,7 @@ const sections = [
 
       <div
         class="max-w-2xl mx-auto text-center space-y-8 text-[#3D3D3D]/80 font-light leading-relaxed mb-24"
+        data-aos="fade-up" data-aos-delay="200"
       >
         <p>
           Florence is one of the most beautiful cities in the world, filled with
@@ -156,11 +157,12 @@ const sections = [
         <div v-for="(section, sIndex) in sections" :key="sIndex">
           <h3
             class="text-3xl font-title italic text-center text-[#3D3D3D] mb-4"
+            data-aos="fade-up"
           >
             {{ section.title }}
           </h3>
 
-          <div v-if="section.intro" class="max-w-2xl mx-auto text-center mb-10">
+          <div v-if="section.intro" class="max-w-2xl mx-auto text-center mb-10" data-aos="fade-up">
             <p class="italic text-[#3D3D3D]/80 font-light leading-relaxed">
               {{ section.intro }}
             </p>
@@ -172,6 +174,8 @@ const sections = [
               v-for="(place, pIndex) in section.items"
               :key="pIndex"
               class="space-y-3 text-center md:text-left"
+              data-aos="fade-up"
+              :data-aos-delay="(pIndex % 2) * 200"
             >
               <h4 class="text-xl font-title text-[#3D3D3D]">
                 {{ place.name }}
@@ -197,7 +201,7 @@ const sections = [
           </div>
         </div>
 
-        <div class="text-center max-w-3xl mx-auto mt-20">
+        <div class="text-center max-w-3xl mx-auto mt-20" data-aos="fade-up">
           <h3
             class="text-3xl font-title italic text-center text-[#3D3D3D] mb-4"
           >
@@ -207,7 +211,7 @@ const sections = [
             If you would like assistance arranging private visit, wine tastings,
             transportation, cooking classes, or bespoke experiences throughout
             Florence and Tuscany, our concierge team would be pleased to assist.
-            Please contact them at: emmetmarissa@affresco.it
+            Please contact them at: <a href="mailto:emmetmarissa@affresco.it" class="underline">emmetmarissa@affresco.it</a>
           </p>
         </div>
       </div>

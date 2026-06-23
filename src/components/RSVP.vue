@@ -167,6 +167,7 @@ const submitForm = async () => {
     <div class="relative z-10 w-full max-w-2xl px-6">
       <div
         class="bg-white/40 backdrop-blur-sm p-8 md:p-12 border border-black/5 shadow-sm rounded-sm"
+        data-aos="fade-up"
       >
         <!-- Header -->
         <div class="text-center mb-12 relative">

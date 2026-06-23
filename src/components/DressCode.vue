@@ -24,7 +24,7 @@ const codes = [
 <template>
   <section id="dresscode" class="py-32 px-4 bg-primary">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">
           Dress Code
         </h2>
@@ -32,9 +32,11 @@ const codes = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
         <div
-          v-for="code in codes"
+          v-for="(code, index) in codes"
           :key="code.event"
           class="flex flex-col items-center text-center space-y-8"
+          data-aos="fade-up"
+          :data-aos-delay="index * 200"
         >
           <div
             class="w-full aspect-[2/3] bg-gray-200 overflow-hidden shadow-xl grayscale-20 hover:grayscale-0 transition-all duration-500 group"

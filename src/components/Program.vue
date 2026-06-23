@@ -97,7 +97,7 @@ onUnmounted(() => {
   >
     <div class="max-w-6xl mx-auto">
       <!-- Main Title -->
-      <div class="text-center mb-32">
+      <div class="text-center mb-32" data-aos="fade-up">
         <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">Schedule of Events</h2>
       </div>
 
@@ -133,6 +133,7 @@ onUnmounted(() => {
                   ? 'md:items-end md:text-right'
                   : 'md:items-start md:text-left'
               "
+              data-aos="fade-up"
             >
               <div class="max-w-md w-full">
                 <h3
@@ -200,7 +201,7 @@ onUnmounted(() => {
             <div class="hidden md:block w-px h-full"></div>
 
             <!-- Image Column -->
-            <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2" data-aos="fade-up" data-aos-delay="200">
               <div class="relative overflow-hidden shadow-sm group">
                 <img
                   :src="day.image"

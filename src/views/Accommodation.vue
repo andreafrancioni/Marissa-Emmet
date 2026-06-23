@@ -54,13 +54,14 @@ const hotels = [
 <template>
   <section id="accommodation" class="py-32 bg-primary px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-6xl text-[#3D3D3D] m-4">Your Stay</h2>
         <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
 
       <div
         class="max-w-2xl mx-auto text-center space-y-8 text-[#3D3D3D]/80 font-light leading-relaxed mb-24"
+        data-aos="fade-up" data-aos-delay="200"
       >
         <p>
           To make your stay as comfortable and enjoyable as possible, we have
@@ -80,6 +81,7 @@ const hotels = [
         >
           <div
             class="w-full md:w-1/2 aspect-[4/3] bg-gray-200 overflow-hidden shadow-xl group"
+            data-aos="fade-up"
           >
             <img
               :src="hotel.image"
@@ -87,7 +89,7 @@ const hotels = [
               class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-700"
             />
           </div>
-          <div class="w-full md:w-1/2 space-y-6 flex flex-col justify-center">
+          <div class="w-full md:w-1/2 space-y-6 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
             <div>
               <h3 class="text-2xl font-title text-[#3D3D3D] mb-2">
                 {{ hotel.name }}

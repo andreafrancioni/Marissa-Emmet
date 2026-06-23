@@ -16,7 +16,7 @@ const goToRSVP = () => {
   >
     <!-- Decorative Background Optional -->
 
-    <div class="relative z-10 max-w-2xl px-6 flex flex-col items-center">
+    <div class="relative z-10 max-w-2xl px-6 flex flex-col items-center" data-aos="fade-up">
       <p
         class="text-xl md:text-2xl font-title italic text-[#3D3B39] leading-relaxed mb-6"
       >

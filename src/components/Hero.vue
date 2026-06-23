@@ -107,7 +107,7 @@ onUnmounted(() => {
 
   <!-- Content below Hero -->
   <section class="bg-primary py-16 px-4">
-    <div class="max-w-2xl mx-auto text-center space-y-6 animate-fade-in-up">
+    <div class="max-w-2xl mx-auto text-center space-y-6" data-aos="fade-up">
       <p
         class="text-xs md:text-sm tracking-[0.1em] font-menu text-gray-500 uppercase"
       >
