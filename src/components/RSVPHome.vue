@@ -12,11 +12,14 @@ const goToRSVP = () => {
 <template>
   <section
     id="rsvp"
-    class="relative min-h-screen py-24 bg-primary overflow-hidden flex flex-col items-center justify-center text-center"
+    class="relative py-24 bg-primary overflow-hidden flex flex-col items-center justify-center text-center"
   >
     <!-- Decorative Background Optional -->
 
-    <div class="relative z-10 max-w-2xl px-6 flex flex-col items-center" data-aos="fade-up">
+    <div
+      class="relative z-10 max-w-2xl px-6 flex flex-col items-center"
+      data-aos="fade-up"
+    >
       <p
         class="text-xl md:text-2xl font-title italic text-[#3D3B39] leading-relaxed mb-6"
       >
