@@ -5,14 +5,19 @@ import DressCode from "../components/DressCode.vue";
 import Contact from "../components/Contact.vue";
 import FAQ from "../components/FAQ.vue";
 import RSVPHome from "../components/RSVPHome.vue";
+import Divider from "../components/Divider.vue";
 </script>
 
 <template>
   <main>
     <Hero />
+    <Divider />
     <Program />
+    <Divider />
     <RSVPHome />
+    <Divider />
     <FAQ />
+    <Divider />
     <Contact />
   </main>
 </template>

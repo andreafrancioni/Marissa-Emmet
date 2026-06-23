@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const activeIndex = ref(null);
 
@@ -25,7 +25,7 @@ const faqs = [
             We recommend checking your passport expiration date well in advance
             of travel. For additional information, please visit the U.S.
             Department of State website.
-          </p>`
+          </p>`,
   },
   {
     question: "Are there any special entry requirements for U.S. travelers?",
@@ -47,7 +47,7 @@ const faqs = [
             As our wedding approaches, we recommend checking the latest travel
             guidance to ensure you have completed any required steps before
             departure.
-          </p>`
+          </p>`,
   },
   {
     question: "When should I book my flights?",
@@ -56,7 +56,7 @@ const faqs = [
             plan to extend your stay in Italy before or after the wedding
             weekend. Spring is a popular travel season in Tuscany, and airfare
             and hotel availability may become more limited closer to the date.
-          </p>`
+          </p>`,
   },
   {
     question: "What hotel should I stay at?",
@@ -89,7 +89,7 @@ const faqs = [
               class="text-blue-700 underline font-medium"
               >emmetmarissa@affresco.it</a
             >
-          </p>`
+          </p>`,
   },
   {
     question: "Can we bring children?",
@@ -105,51 +105,69 @@ const faqs = [
           <p>
             We truly appreciate your understanding and support, and we can't
             wait to celebrate together!
-          </p>`
-  }
+          </p>`,
+  },
 ];
 </script>
 
 <template>
-  <section id="faq" class="py-24 px-4 bg-white">
+  <section id="faq" class="py-24 px-4">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">
-          Faq
-        </h2>
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">Faq</h2>
         <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
       </div>
-      
+
       <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
-        <div 
-          v-for="(faq, index) in faqs" 
+        <div
+          v-for="(faq, index) in faqs"
           :key="index"
           class="border border-[#D5C6DC] rounded-xl overflow-hidden transition-all duration-300"
-          :class="activeIndex === index ? 'shadow-md bg-primary' : 'bg-white hover:bg-gray-50'"
+          :class="
+            activeIndex === index
+              ? 'shadow-md bg-primary'
+              : 'bg-white hover:bg-gray-50'
+          "
         >
-          <button 
+          <button
             @click="toggleAccordion(index)"
             class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none"
           >
             <h3 class="text-xl font-title text-[#3D3D3D] pr-8">
               {{ faq.question }}
             </h3>
-            <span class="text-[#D5C6DC] transition-transform duration-300 transform" :class="activeIndex === index ? 'rotate-180' : ''">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            <span
+              class="text-[#D5C6DC] transition-transform duration-300 transform"
+              :class="activeIndex === index ? 'rotate-180' : ''"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </span>
           </button>
-          
-          <div 
+
+          <div
             class="overflow-hidden transition-all duration-500 ease-in-out"
-            :style="{ 
-              maxHeight: activeIndex === index ? '1000px' : '0', 
-              opacity: activeIndex === index ? '1' : '0' 
+            :style="{
+              maxHeight: activeIndex === index ? '1000px' : '0',
+              opacity: activeIndex === index ? '1' : '0',
             }"
           >
-            <div class="px-6 pb-6 pt-0 text-[#3D3D3D]/80 font-light leading-relaxed space-y-4" v-html="faq.answer">
-            </div>
+            <div
+              class="px-6 pb-6 pt-0 text-[#3D3D3D]/80 font-light leading-relaxed space-y-4"
+              v-html="faq.answer"
+            ></div>
           </div>
         </div>
       </div>
