@@ -1,7 +1,7 @@
 <script setup>
 const hotels = [
   {
-    name: "HELVETIA & BRISTOL ★★★★★",
+    name: "HELVETIA & BRISTOL 5*",
     address: "Via de' Pescioni 2, 50123 Firenze",
     description:
       "One of Florence's most storied addresses, Helvetia & Bristol blends old-world elegance with contemporary comfort. Tucked away just steps from Via de' Tornabuoni and the city's iconic landmarks, it offers the perfect setting to immerse yourself in the beauty and atmosphere of Florence while enjoying impeccable hospitality.",
@@ -9,7 +9,7 @@ const hotels = [
     image: "https://placehold.co/800x600?text=Helvetia+%26+Bristol",
   },
   {
-    name: "PALAZZO VECCHIETTI ★★★★★",
+    name: "PALAZZO VECCHIETTI 5*",
     address: "Via degli Strozzi, 4 50123 Firenze",
     description:
       "We love Palazzo Vecchietti for its quiet elegance and residential feel. Tucked away in the heart of Florence, it offers a unique blend of history, comfort, and privacy, making it an ideal retreat after a day spent exploring the city.",
@@ -17,7 +17,7 @@ const hotels = [
     image: "https://placehold.co/800x600?text=Palazzo+Vecchietti",
   },
   {
-    name: "HOTEL L'OROLOGIO FIRENZE ★★★★S",
+    name: "HOTEL L'OROLOGIO FIRENZE 4*S",
     address: "Piazza Santa Maria Novella, 24, 50123 Florence, Italy",
     description:
       "An elegant boutique hotel overlooking Piazza Santa Maria Novella, Hotel L'Orologio combines refined design, exceptional comfort, and a prime location in the heart of Florence, just steps away from the city's main attractions.",
@@ -25,7 +25,7 @@ const hotels = [
     image: "https://placehold.co/800x600?text=Hotel+LOrologio",
   },
   {
-    name: "HOTEL SANTA MARIA NOVELLA ★★★★S",
+    name: "HOTEL SANTA MARIA NOVELLA 4*S",
     address: "Piazza Santa Maria Novella, 1, 50123 Florence, Italy",
     description:
       "Set directly on the historic Piazza Santa Maria Novella, this charming hotel offers timeless Florentine elegance, spacious accommodations, and beautiful views of one of Florence's most iconic squares.",
@@ -33,7 +33,7 @@ const hotels = [
     image: "https://placehold.co/800x600?text=Hotel+Santa+Maria+Novella",
   },
   {
-    name: "HOTEL GARIBALDI BLU ★★★★",
+    name: "HOTEL GARIBALDI BLU 4*",
     address: "Piazza Santa Maria Novella, 21, 50123 Florence, Italy",
     description:
       "A stylish contemporary hotel blending modern design with Renaissance-inspired details, Hotel Garibaldi Blu offers a sophisticated stay in a central and vibrant location.",
@@ -41,7 +41,7 @@ const hotels = [
     image: "https://placehold.co/800x600?text=Hotel+Garibaldi+Blu",
   },
   {
-    name: "HOTEL ROSSO 23 ★★★★",
+    name: "HOTEL ROSSO 23 4*",
     address: "Piazza Santa Maria Novella, 21, 50123 Florence, Italy",
     description:
       "With its contemporary interiors and welcoming atmosphere, Hotel Rosso 23 provides comfortable accommodations in the heart of Florence, directly facing Piazza Santa Maria Novella.",

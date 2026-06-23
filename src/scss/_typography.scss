@@ -29,10 +29,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Classic Script';
+  src: url('../assets/fonts/ClassicScriptMN-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // 2. SCSS Variables
 $font-title: 'Priori Serif';
 $font-body: 'Cormorant Garamond', serif;
 $font-menu: 'Optima', sans-serif;
+$font-script: 'Classic Script', serif;
 
 // 3. Typographic Rules
 

@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import programImage from "../assets/program-tile.png";
+import welcomeImage from "../assets/welcome.png";
+import weddingImage from "../assets/wedding.png";
+import brunchImage from "../assets/brunch.png";
 
 const days = [
   {
@@ -16,7 +18,7 @@ const days = [
           "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.",
       },
     ],
-    image: programImage,
+    image: welcomeImage,
   },
   {
     day: 2,
@@ -38,7 +40,7 @@ const days = [
           "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane.",
       },
     ],
-    image: programImage,
+    image: weddingImage,
   },
   {
     day: 3,
@@ -53,7 +55,7 @@ const days = [
           "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*",
       },
     ],
-    image: programImage,
+    image: brunchImage,
   },
 ];
 
@@ -96,9 +98,7 @@ onUnmounted(() => {
     <div class="max-w-6xl mx-auto">
       <!-- Main Title -->
       <div class="text-center mb-32">
-        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">
-          Schedule of Events
-        </h2>
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">Schedule of Events</h2>
       </div>
 
       <div class="relative">
@@ -128,7 +128,11 @@ onUnmounted(() => {
             <!-- Content Column -->
             <div
               class="w-full md:w-1/2 flex flex-col"
-              :class="index % 2 === 0 ? 'md:items-end md:text-right' : 'md:items-start md:text-left'"
+              :class="
+                index % 2 === 0
+                  ? 'md:items-end md:text-right'
+                  : 'md:items-start md:text-left'
+              "
             >
               <div class="max-w-md w-full">
                 <h3
@@ -153,19 +157,25 @@ onUnmounted(() => {
                     <h5
                       v-if="event.title"
                       class="text-xl font-title text-[#3D3D3D] mb-2"
-                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
                     >
                       {{ event.title }}
                     </h5>
                     <span
                       class="block text-xs font-menu tracking-widest text-gray-500 mb-4 uppercase"
-                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
                       >{{ event.time }}</span
                     >
                     <div
                       v-if="event.location"
                       class="mb-4 text-sm font-menu text-gray-500 whitespace-pre-line"
-                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
                     >
                       <span
                         class="font-semibold block uppercase tracking-widest mb-1 text-[10px]"
@@ -175,7 +185,9 @@ onUnmounted(() => {
                     </div>
                     <p
                       class="text-base font-light leading-relaxed whitespace-pre-line"
-                      :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                      :class="
+                        index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                      "
                     >
                       {{ event.description }}
                     </p>
@@ -189,9 +201,7 @@ onUnmounted(() => {
 
             <!-- Image Column -->
             <div class="w-full md:w-1/2">
-              <div
-                class="aspect-square relative overflow-hidden shadow-sm group"
-              >
+              <div class="relative overflow-hidden shadow-sm group">
                 <img
                   :src="day.image"
                   :alt="'Day ' + day.day"

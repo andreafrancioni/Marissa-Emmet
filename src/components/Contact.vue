@@ -1,20 +1,26 @@
 <template>
-  <section id="contact" class="py-24 px-4 bg-primary">
+  <section id="contact" class="py-32 px-4 bg-primary">
     <div class="max-w-4xl mx-auto text-center">
       <div class="mb-16">
-        <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4">Contact</h2>
-        <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D] mb-4 uppercase">
+          Contact
+        </h2>
       </div>
-      <div class="space-y-8 text-[#3D3D3D]/80 font-light leading-relaxed max-w-2xl mx-auto">
-        <p>
-          Should you require any assistance in planning your visit or have any questions regarding the wedding celebrations, please contact our dedicated guest concierge team at:
+      <div
+        class="space-y-12 text-[#3D3D3D] font-light leading-relaxed max-w-2xl mx-auto"
+      >
+        <p class="text-xl md:text-2xl">
+          Should you require any assistance, our Event Team will be pleased to
+          assist you.
         </p>
-        <p class="text-2xl font-title text-[#3D3D3D]">
-          <a href="mailto:emmetmarissa@affresco.it" class="hover:text-gray-500 transition-colors">emmetmarissa@affresco.it</a>
-        </p>
-        <p>
-          We look forward to assisting you and welcoming you to Florence.
-        </p>
+        <div class="pt-8">
+          <a
+            href="mailto:emmetmarissa@affresco.it"
+            class="inline-block border border-[#D0C4B4] px-10 py-4 text-sm tracking-widest text-[#3D3D3D] hover:bg-[#D0C4B4]/20 transition-colors uppercase font-menu"
+          >
+            Event Team Contact
+          </a>
+        </div>
       </div>
     </div>
   </section>
