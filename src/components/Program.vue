@@ -15,7 +15,7 @@ const days = [
         location:
           "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
         description:
-          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.",
+          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance.",
       },
     ],
     image: welcomeImage,
@@ -30,7 +30,7 @@ const days = [
         location:
           "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
         description:
-          "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
+          "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nAttire: Black Tie Optional\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
       },
       {
         title: "Wedding Reception & After-Party",
@@ -52,7 +52,7 @@ const days = [
         location:
           "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
         description:
-          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*",
+          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*\n\nAttire: Tuscany Resort Chic",
       },
     ],
     image: brunchImage,
@@ -201,8 +201,12 @@ onUnmounted(() => {
             <div class="hidden md:block w-px h-full"></div>
 
             <!-- Image Column -->
-            <div class="w-full md:w-1/2" data-aos="fade-up" data-aos-delay="200">
-              <div class="relative overflow-hidden shadow-sm group">
+            <div
+              class="w-full md:w-1/2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="relative overflow-hidden group">
                 <img
                   :src="day.image"
                   :alt="'Day ' + day.day"

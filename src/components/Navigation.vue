@@ -7,7 +7,6 @@ const navLeft = [
   { name: "HOME", href: "/#welcome" },
   { name: "RSVP", href: "/#rsvp" },
   { name: "SCHEDULE OF EVENTS", href: "/#program" },
-  { name: "ATTIRE", href: "/#dresscode" },
 ];
 
 const navRight = [
@@ -137,9 +136,7 @@ const isMenuOpen = ref(false);
 
           <!-- Decorative Element -->
           <div class="mt-12 opacity-30 shrink-0">
-            <span
-              class="block w-3 h-3 rotate-45 bg-text rounded-sm"
-            ></span>
+            <span class="block w-3 h-3 rotate-45 bg-text rounded-sm"></span>
           </div>
         </div>
       </transition>

@@ -109,18 +109,21 @@ onUnmounted(() => {
   <section class="bg-primary py-16 px-4">
     <div class="max-w-2xl mx-auto text-center space-y-6" data-aos="fade-up">
       <p
-        class="text-xs md:text-sm tracking-[0.1em] font-menu text-gray-500 uppercase"
+        class="text-md md:text-2xl tracking-[0.5em] font-menu text-gray-500 uppercase"
       >
-        Dear Friends,
+        Benvenuti!
       </p>
       <p
         class="text-lg md:text-xl font-title leading-relaxed text-[#3D3D3D]/80"
       >
-        We are delighted to share with you the program for our celebration
-        weekend this August in Florence, Italy. <br class="hidden md:block" />
-        Please note that we are arranging all transfers to and from the
-        celebration venues <br class="hidden md:block" />
-        (Welcome Dinner, Wedding Party, and Brunch).
+        Thank you for being part of this special chapter in our lives and for
+        traveling to celebrate our Marriage with us. We are so excited to
+        welcome you to Florence, a city that holds a special place in our
+        hearts. Having you here means the world to us. We look forward to
+        creating unforgettable memories together as we begin this next chapter
+        in our lives. Thank you for being part of our story and for joining us
+        in Florence to share in this unforgettable weekend.<br /><br />Con
+        Amore,<br />Marissa & Emmet
       </p>
     </div>
   </section>

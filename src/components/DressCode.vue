@@ -25,9 +25,7 @@ const codes = [
   <section id="dresscode" class="py-32 px-4 bg-primary">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">
-          Dress Code
-        </h2>
+        <h2 class="text-6xl md:text-8xl text-[#3D3D3D]">Dress Code</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">

@@ -1,12 +1,21 @@
+<script setup>
+import logoImage from "../assets/solo_logo.png";
+</script>
+
 <template>
   <footer
     id="contact"
     class="py-32 px-4 bg-primary border-t border-[#3D3D3D]/10"
   >
-    <div class="max-w-7xl mx-auto flex flex-col items-center gap-12" data-aos="fade-up">
-      <h1 class="text-6xl text-center md:text-left text-[#3D3D3D]">
-        Emmet & Marissa
-      </h1>
+    <div
+      class="max-w-7xl mx-auto flex flex-col items-center gap-12"
+      data-aos="fade-up"
+    >
+      <img
+        :src="logoImage"
+        alt="Emmet & Marissa"
+        class="h-48 md:h-60 object-contain"
+      />
 
       <div class="flex flex-col md:flex-row items-center gap-12 text-center">
         <div class="space-y-4">
