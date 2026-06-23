@@ -1,8 +1,11 @@
 <script setup>
 import { ref, reactive } from "vue";
-import stickersImg from "@/assets/stickers.png";
+import { useRouter } from "vue-router";
+import stickerImg from "@/assets/stickers/stickers copia (1)-05.png";
 
 const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+
+const router = useRouter();
 
 const currentStep = ref(1);
 const isSubmitting = ref(false);
@@ -113,11 +116,7 @@ const validateStep = () => {
     }
   }
   if (currentStep.value === 6) {
-    if (!form.dietary.allergies) {
-      errorMessage.value =
-        "Please fill in the food allergies field (write 'None' if applicable).";
-      return false;
-    }
+    // No required fields
   }
   errorMessage.value = "";
   return true;
@@ -127,10 +126,6 @@ const submitForm = async () => {
   if (form.attending === "yes" && form.events.weddingDay.status === "") {
     errorMessage.value =
       "Please let us know if you will attend the Wedding Day.";
-    return;
-  }
-  if (form.attending === "yes" && !form.dietary.allergies) {
-    errorMessage.value = "Please fill in the food allergies field.";
     return;
   }
 
@@ -148,11 +143,17 @@ const submitForm = async () => {
     });
 
     isSuccess.value = true;
+    setTimeout(() => {
+      router.push("/");
+    }, 4000);
   } catch (error) {
     console.error("Submission error:", error);
     // Even with no-cors, if it doesn't throw, we assume success or handle failure
     // Google Apps Script usually returns an opaque response with no-cors
     isSuccess.value = true;
+    setTimeout(() => {
+      router.push("/");
+    }, 4000);
   } finally {
     isSubmitting.value = false;
   }
@@ -172,17 +173,12 @@ const submitForm = async () => {
         <!-- Header -->
         <div class="text-center mb-12 relative">
           <!-- Decorative Stickers -->
-          <div
-            class="absolute opacity-[0.15] pointer-events-none"
-            :style="{
-              backgroundImage: `url(${stickersImg})`,
-              backgroundPosition: '-170px -680px',
-              width: '90px',
-              height: '230px',
-              bottom: '-40px',
-              right: '-20px',
-            }"
-          ></div>
+          <img
+            :src="stickerImg"
+            class="absolute opacity-[0.15] pointer-events-none w-[90px] h-auto"
+            style="bottom: -40px; right: -20px;"
+            alt="Decorative sticker"
+          />
 
           <h3
             class="text-[10px] tracking-[0.4em] font-menu text-gray-500 uppercase mb-4 relative z-10"
@@ -190,13 +186,11 @@ const submitForm = async () => {
             Confirm Attendance
           </h3>
           <h2
-            class="text-4xl md:text-6xl text-[#3D3B39] leading-tight relative z-10"
+            class="text-4xl md:text-6xl font-title text-[#3D3B39] leading-tight relative z-10"
           >
             Emmet & Marissa<br />Wedding
           </h2>
-          <div
-            class="w-12 h-[1px] bg-accent mx-auto mt-6 relative z-10"
-          ></div>
+          <div class="w-12 h-[1px] bg-accent mx-auto mt-6 relative z-10"></div>
         </div>
 
         <!-- Success Message -->
@@ -232,7 +226,10 @@ const submitForm = async () => {
           <div class="flex justify-center mb-12 space-x-4 md:space-x-8">
             <div v-for="step in 6" :key="step" class="relative">
               <div
-                :class="[ 'w-2 h-2 rounded-full transition-all duration-500', currentStep >= step ? 'bg-accent scale-125' : 'bg-gray-300', ]"
+                :class="[
+                  'w-2 h-2 rounded-full transition-all duration-500',
+                  currentStep >= step ? 'bg-accent scale-125' : 'bg-gray-300',
+                ]"
               ></div>
               <div
                 v-if="step < 6"
@@ -250,7 +247,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Contact Information
                 </h4>
@@ -309,9 +306,9 @@ const submitForm = async () => {
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
-                  Additional Guest
+                  Additional Guest (Optional)
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <div class="space-y-2">
@@ -348,7 +345,7 @@ const submitForm = async () => {
             >
               <div class="text-center space-y-6">
                 <h4
-                  class="text-sm font-title text-[#3D3B39] uppercase tracking-[0.2em]"
+                  class="text-sm font-menu text-[#3D3B39] uppercase tracking-[0.2em]"
                 >
                   Will you join us?
                 </h4>
@@ -390,7 +387,7 @@ const submitForm = async () => {
                 </div>
 
                 <p
-                  class="text-xs md:text-sm text-gray-500 font-light italic max-w-md mx-auto pt-6"
+                  class="text-s md:text-sm text-gray-500 font-light italic max-w-md mx-auto pt-6"
                 >
                   While we adore your little ones, we kindly invite you to enjoy
                   our wedding celebrations as an adults-only occasion.
@@ -405,7 +402,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Shipping Address for Invitation
                 </h4>
@@ -497,7 +494,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Travel Information
                 </h4>
@@ -510,6 +507,8 @@ const submitForm = async () => {
                     <input
                       v-model="form.arrivalDate"
                       type="date"
+                      min="2027-04-01"
+                      max="2027-04-31"
                       required
                       class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
@@ -522,6 +521,8 @@ const submitForm = async () => {
                     <input
                       v-model="form.departureDate"
                       type="date"
+                      min="2027-04-01"
+                      max="2027-04-31"
                       required
                       class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
@@ -531,7 +532,7 @@ const submitForm = async () => {
 
               <div class="space-y-4 pt-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Accommodation
                 </h4>
@@ -559,7 +560,7 @@ const submitForm = async () => {
             >
               <div class="space-y-8">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Event Attendance
                 </h4>
@@ -613,14 +614,14 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
+                      class="block text-[10px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
                       v-model.number="form.events.welcomeEvening.guests"
                       type="number"
                       min="1"
-                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
+                      class="w-30 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-m font-light"
                     />
                   </div>
                 </div>
@@ -674,14 +675,14 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
+                      class="block text-[10px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
                       v-model.number="form.events.weddingDay.guests"
                       type="number"
                       min="1"
-                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
+                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-m font-light"
                     />
                   </div>
                 </div>
@@ -735,14 +736,14 @@ const submitForm = async () => {
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu mb-1"
+                      class="block text-[10px] tracking-widest uppercase text-gray-400 font-menu mb-1"
                       >Number of attendees</label
                     >
                     <input
                       v-model.number="form.events.farewellBrunch.guests"
                       type="number"
                       min="1"
-                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-sm font-light"
+                      class="w-20 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-m font-light"
                     />
                   </div>
                 </div>
@@ -756,7 +757,7 @@ const submitForm = async () => {
             >
               <div class="space-y-4">
                 <h4
-                  class="text-xs font-title text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                 >
                   Dietary Requirements
                 </h4>
@@ -767,7 +768,7 @@ const submitForm = async () => {
                 <div class="space-y-2">
                   <label
                     class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
-                    >Food allergies (medical) *</label
+                    >Food allergies (medical) (optional)</label
                   >
                   <textarea
                     v-model="form.dietary.allergies"
@@ -780,7 +781,8 @@ const submitForm = async () => {
                 <div class="space-y-2">
                   <label
                     class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
-                    >Dietary preferences (vegetarian, vegan, etc.)</label
+                    >Dietary preferences (vegetarian, vegan, etc.)
+                    (optional)</label
                   >
                   <textarea
                     v-model="form.dietary.preferences"
@@ -802,13 +804,13 @@ const submitForm = async () => {
 
             <!-- Navigation Buttons -->
             <div
-              class="flex items-center justify-between pt-8 border-t border-black/5"
+              class="flex items-center justify-center gap-4 pt-8 border-t border-black/5"
             >
               <button
                 v-if="currentStep > 1"
                 type="button"
                 @click="prevStep"
-                class="text-[10px] tracking-[0.3em] font-menu uppercase text-gray-400 hover:text-[#3D3B39] transition-colors"
+                class="px-12 py-4 bg-text text-dark bg-white border border-gray-300 text-[10px] tracking-[0.3em] font-menu uppercase hover:bg-accent hover:text-[#3D3B39] rounded-[5px] shadow-[0_4px_12px_rgba(166,130,173,0.15)] hover:shadow-[0_10px_30px_rgba(166,130,173,0.3)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 Back
               </button>
