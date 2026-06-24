@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
-const weddingDate = new Date("2027-06-18T00:00:00");
+const weddingDate = new Date("2027-04-23T00:00:00");
 const days = ref(0);
 const hours = ref(0);
 const minutes = ref(0);

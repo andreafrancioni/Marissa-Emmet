@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import videoPoster from "../assets/savethedatenuovo-cover.png";
 
 const router = useRouter();
 const videoRef = ref(null);
@@ -48,11 +49,12 @@ const goToRSVP = () => {
         ref="videoRef"
         class="fullscreen-video"
         playsinline
+        :poster="videoPoster"
         @timeupdate="onTimeUpdate"
         @ended="onVideoEnded"
       >
         <source
-          src="../assets/savethedatenuovo.mp4"
+          src="../assets/savethedatenuovo.mp4#t=0.001"
           type="video/mp4"
         />
         Your browser does not support the video tag.
