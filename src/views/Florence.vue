@@ -159,7 +159,7 @@ const sections = [
         <h2 class="text-6xl text-[#3D3D3D] m-4">
           Our Favorite Places
         </h2>
-        <img :src="skylineImage" alt="Florence Skyline" class="mx-auto mt-6 object-contain max-h-24" />
+        <img :src="skylineImage" alt="Florence Skyline" class="mx-auto mt-6 object-contain" />
       </div>
 
       <div
