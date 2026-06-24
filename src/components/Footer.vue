@@ -20,24 +20,12 @@ import logoImage from "../assets/solo_logo.png";
       <div class="flex flex-col md:flex-row items-center gap-12 text-center">
         <div class="space-y-4">
           <p
-            class="text-[10px] tracking-widest font-menu uppercase font-bold text-gray-500"
+            class="text-[12px] tracking-widest font-menu uppercase font-bold text-gray-500"
           >
-            Contact
-          </p>
-          <a
-            href="mailto:emmetmarissa@affresco.it"
-            class="text-lg font-title hover:text-gray-500 transition-colors"
-            >emmetmarissa@affresco.it</a
-          >
-        </div>
-
-        <div class="w-12 h-px bg-text/30 hidden md:block"></div>
-
-        <div class="space-y-4">
-          <p
-            class="text-[10px] tracking-widest font-menu uppercase font-bold text-gray-500"
-          >
-            April 22nd to 24th 2027
+            April <span class="text-sm">22</span
+            ><sup class="text-[5px]">nd</sup> to
+            <span class="text-[15px]">24</span><sup class="text-[5px]">th</sup>
+            <span class="text-[15px]">2027</span>
           </p>
           <p class="text-xs tracking-[0.2em] font-menu text-gray-400 uppercase">
             Florence Italy

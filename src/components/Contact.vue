@@ -8,7 +8,8 @@
       </div>
       <div
         class="space-y-12 text-[#3D3D3D] font-light leading-relaxed max-w-2xl mx-auto"
-        data-aos="fade-up" data-aos-delay="200"
+        data-aos="fade-up"
+        data-aos-delay="200"
       >
         <p class="text-xl md:text-2xl">
           Should you require any assistance, our Event Team will be pleased to
@@ -19,7 +20,7 @@
             href="mailto:emmetmarissa@affresco.it"
             class="inline-block border border-[#D0C4B4] px-10 py-4 text-sm tracking-widest text-[#3D3D3D] hover:bg-[#D0C4B4]/20 transition-colors uppercase font-menu"
           >
-            Event Team Contact
+            GET IN TOUCH
           </a>
         </div>
       </div>

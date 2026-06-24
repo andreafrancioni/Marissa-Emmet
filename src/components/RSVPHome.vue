@@ -23,26 +23,20 @@ const goToRSVP = () => {
       <p
         class="text-xl md:text-2xl font-title italic text-[#3D3B39] leading-relaxed mb-6"
       >
-        We can't wait to welcome you to Florence and
-        <br class="hidden md:block" />
-        share this unforgettable <br class="hidden md:block" />
-        celebration with you.
+        Florence has our hearts, and so do you. The greatest gift is having our
+        favorite people together in one place.<br />
+        Thank you for making this celebration even more meaningful simply by
+        being part of it.
       </p>
 
       <p class="text-xl md:text-2xl font-title italic text-[#3D3B39] mb-6">
-        Thank you for being part of it !
+        With all our love,
       </p>
 
-      <p class="text-xl md:text-2xl font-title italic text-[#3D3B39] mb-6">
-        With love !
-      </p>
-
-      <h2 class="text-5xl md:text-7xl text-[#3D3B39] mb-16">
-        Emmet and Marissa
-      </h2>
+      <h2 class="text-4xl md:text-7xl text-[#3D3B39] mb-16">Emmet & Marissa</h2>
 
       <p class="text-lg md:text-xl font-menu text-[#3D3B39] mb-6">
-        Click here to provide your participation details.
+        Kindly confirm your attendance below.
       </p>
 
       <button

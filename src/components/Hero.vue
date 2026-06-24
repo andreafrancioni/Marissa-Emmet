@@ -57,47 +57,47 @@ onUnmounted(() => {
       <!-- Countdown -->
       <div class="flex justify-center items-center gap-4 md:gap-8 mt-12">
         <div class="flex flex-col items-center">
-          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+          <span class="text-3xl md:text-5xl font-title text-[#414F36]">{{
             days
           }}</span>
           <span
-            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#414F36]/70 mt-2"
             >Days</span
           >
         </div>
-        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+        <div class="text-2xl md:text-4xl font-title text-[#414F36]/50 mb-6">
           :
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+          <span class="text-3xl md:text-5xl font-title text-[#414F36]">{{
             hours
           }}</span>
           <span
-            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#414F36]/70 mt-2"
             >Hours</span
           >
         </div>
-        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+        <div class="text-2xl md:text-4xl font-title text-[#414F36]/50 mb-6">
           :
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+          <span class="text-3xl md:text-5xl font-title text-[#414F36]">{{
             minutes
           }}</span>
           <span
-            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#414F36]/70 mt-2"
             >Mins</span
           >
         </div>
-        <div class="text-2xl md:text-4xl font-title text-[#3D3D3D]/50 mb-6">
+        <div class="text-2xl md:text-4xl font-title text-[#414F36]/50 mb-6">
           :
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-3xl md:text-5xl font-title text-[#3D3D3D]">{{
+          <span class="text-3xl md:text-5xl font-title text-[#414F36]">{{
             seconds
           }}</span>
           <span
-            class="text-xs tracking-[0.2em] font-menu uppercase text-[#3D3D3D]/70 mt-2"
+            class="text-xs tracking-[0.2em] font-menu uppercase text-[#414F36]/70 mt-2"
             >Secs</span
           >
         </div>
@@ -150,6 +150,7 @@ onUnmounted(() => {
 }
 
 .hero-image {
-  filter: brightness(0) invert(0);
+  filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(697%)
+    hue-rotate(51deg) brightness(92%) contrast(98%);
 }
 </style>

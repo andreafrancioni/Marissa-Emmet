@@ -14,6 +14,7 @@ const days = [
         time: "9:00 PM – Midnight",
         location:
           "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
+        locationUrl: "https://www.google.com/maps/search/?api=1&query=Palazzo+Gondi+Florence",
         description:
           "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance.",
       },
@@ -29,6 +30,7 @@ const days = [
         time: "4:00 PM",
         location:
           "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
+        locationUrl: "https://www.google.com/maps/search/?api=1&query=Chiesa+dei+Santi+Michele+e+Gaetano+Florence",
         description:
           "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nAttire: Black Tie Optional\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
       },
@@ -36,6 +38,7 @@ const days = [
         title: "Wedding Reception & After-Party",
         time: "From 6:00 PM onwards",
         location: "Villa Mangiacane",
+        locationUrl: "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
         description:
           "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane.",
       },
@@ -51,6 +54,7 @@ const days = [
         time: "11:30 AM - 2:30 PM",
         location:
           "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
+        locationUrl: "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
         description:
           "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*\n\nAttire: Tuscany Resort Chic",
       },
@@ -182,7 +186,14 @@ onUnmounted(() => {
                         class="font-semibold block uppercase tracking-widest mb-1 text-[10px]"
                         >Location</span
                       >
-                      {{ event.location }}
+                      <a
+                        :href="event.locationUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-[#3D3D3D] transition-colors underline decoration-gray-300 hover:decoration-[#3D3D3D] underline-offset-4"
+                      >
+                        {{ event.location }}
+                      </a>
                     </div>
                     <p
                       class="text-base font-light leading-relaxed whitespace-pre-line"
