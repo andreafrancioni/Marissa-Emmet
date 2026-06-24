@@ -1,4 +1,5 @@
 <script setup>
+import skylineImage from "../assets/Skyline firenze.PNG";
 const sections = [
   {
     title: "Food, Drinks & Local Favorites",
@@ -158,7 +159,7 @@ const sections = [
         <h2 class="text-6xl text-[#3D3D3D] m-4">
           Our Favorite Places
         </h2>
-        <div class="w-12 h-[1px] bg-accent mx-auto mt-6"></div>
+        <img :src="skylineImage" alt="Florence Skyline" class="mx-auto mt-6 object-contain max-h-24" />
       </div>
 
       <div
