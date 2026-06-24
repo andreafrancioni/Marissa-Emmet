@@ -12,7 +12,7 @@ const hotels = [
     address: "Via de' Pescioni 2, 50123 Firenze",
     description:
       "One of Florence's most storied addresses, Helvetia & Bristol blends old-world elegance with contemporary comfort. Tucked away just steps from Via de' Tornabuoni and the city's iconic landmarks, it offers the perfect setting to immerse yourself in the beauty and atmosphere of Florence while enjoying impeccable hospitality.",
-    actionHtml: `PLEASE CLICK AT THIS LINK: <a href="#" class="underline font-medium text-black">E&M Wedding in Florence</a> to access our preferential rates`,
+    actionHtml: `PLEASE CLICK AT THIS LINK: <a href="https://eu-west-1.protection.sophos.com?d=starhotels.com&u=aHR0cHM6Ly9yZXNlcnZhdGlvbnMuc3RhcmhvdGVscy5jb20vaGVsdmV0aWEtYW5kLWJyaXN0b2wtZmxvcmVuY2UvYm9vay9kYXRlcy1vZi1zdGF5P2lkZW50aWZpZXI9U1lXRURESU5HJmRhdGVpbj0wNC8yMS8yMDI3JmRhdGVvdXQ9MDQvMjUvMjAyNyZhZHVsdHM9Mg==&p=m&i=NjVjNGVhNzg3NThkMjYzMWU1N2QxY2M1&t=Mm8rRjExb1VBOVlvUm5Nd3RVM21wRjVVM2tRZHdLYktHSnhCOXJ3TWZDQT0=&h=5bba5a31571f475eb96a29aa67363a56&s=AVNPUEhUT0NFTkNSWVBUSVagUmXm3PZucUMTdv_KdKIcKhhkZ1rDeYC2pqtHluVa0A" class="underline font-medium text-black">E&M Wedding in Florence</a> to access our preferential rates`,
     image: imgHelvetia,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Helvetia+%26+Bristol+Firenze",
   },
@@ -21,7 +21,7 @@ const hotels = [
     address: "Via degli Strozzi, 4 50123 Firenze",
     description:
       "We love Palazzo Vecchietti for its quiet elegance and residential feel. Tucked away in the heart of Florence, it offers a unique blend of history, comfort, and privacy, making it an ideal retreat after a day spent exploring the city.",
-    actionHtml: `Please write to: <a href="mailto:info@palazzovecchietti.com" class="underline text-black">info@palazzovecchietti.com</a> and mention the promo code <strong>Marissa & Emmet</strong> to access the preferential rates.`,
+    actionHtml: `Please write to: <a href="mailto:info@palazzovecchietti.com" class="underline text-black">info@palazzovecchietti.com</a> and mention the promo code <strong class="font-bold text-black">Marissa & Emmet</strong> to access the preferential rates.`,
     image: imgVecchietti,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Palazzo+Vecchietti+Firenze",
   },
@@ -30,7 +30,7 @@ const hotels = [
     address: "Piazza Santa Maria Novella, 24, 50123 Florence, Italy",
     description:
       "An elegant boutique hotel overlooking Piazza Santa Maria Novella, Hotel L'Orologio combines refined design, exceptional comfort, and a prime location in the heart of Florence, just steps away from the city's main attractions.",
-    actionHtml: `Email: <a href="mailto:reservations@hotelorologioflorence.it" class="underline text-black">reservations@hotelorologioflorence.it</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong>Marissa&Emmet</strong>.<br>**The promotional code is valid for stays between 22 April and 24 April 2027.**`,
+    actionHtml: `Email: <a href="mailto:reservations@hotelorologioflorence.it" class="underline text-black">reservations@hotelorologioflorence.it</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong class="font-bold text-black">Marissa & Emmet</strong>.<br>The promotional code is valid for stays between 22 April and 24 April 2027.`,
     image: imgOrologio,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+L%27Orologio+Firenze",
   },
@@ -39,7 +39,7 @@ const hotels = [
     address: "Piazza Santa Maria Novella, 1, 50123 Florence, Italy",
     description:
       "Set directly on the historic Piazza Santa Maria Novella, this charming hotel offers timeless Florentine elegance, spacious accommodations, and beautiful views of one of Florence's most iconic squares.",
-    actionHtml: `Email: <a href="mailto:reservations@hotelsantamarianovella.it" class="underline text-black">reservations@hotelsantamarianovella.it</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong>Marissa&Emmet</strong>.<br>**The promotional code is valid for stays between 22 April and 24 April 2027.**`,
+    actionHtml: `Email: <a href="mailto:reservations@hotelsantamarianovella.it" class="underline text-black">reservations@hotelsantamarianovella.it</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong class="font-bold text-black">Marissa & Emmet</strong>.<br>The promotional code is valid for stays between 22 April and 24 April 2027.`,
     image: imgSantaMaria,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Santa+Maria+Novella+Firenze",
   },
@@ -48,7 +48,7 @@ const hotels = [
     address: "Piazza Santa Maria Novella, 21, 50123 Florence, Italy",
     description:
       "A stylish contemporary hotel blending modern design with Renaissance-inspired details, Hotel Garibaldi Blu offers a sophisticated stay in a central and vibrant location.",
-    actionHtml: `Email: <a href="mailto:booking@hotelgaribaldiblu.com" class="underline text-black">booking@hotelgaribaldiblu.com</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong>Marissa&Emmet</strong>.<br>**The promotional code is valid for stays between 22 April and 24 April 2027.**`,
+    actionHtml: `Email: <a href="mailto:booking@hotelgaribaldiblu.com" class="underline text-black">booking@hotelgaribaldiblu.com</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong class="font-bold text-black">Marissa & Emmet</strong>.<br>The promotional code is valid for stays between 22 April and 24 April 2027.`,
     image: imgGaribaldi,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Garibaldi+Blu+Firenze",
   },
@@ -57,7 +57,7 @@ const hotels = [
     address: "Piazza Santa Maria Novella, 21, 50123 Florence, Italy",
     description:
       "With its contemporary interiors and welcoming atmosphere, Hotel Rosso 23 provides comfortable accommodations in the heart of Florence, directly facing Piazza Santa Maria Novella.",
-    actionHtml: `Email: <a href="mailto:info@rosso23.com" class="underline text-black">info@rosso23.com</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong>Marissa&Emmet</strong>.<br>**The promotional code is valid for stays between 22 April and 24 April 2027.**`,
+    actionHtml: `Email: <a href="mailto:info@rosso23.com" class="underline text-black">info@rosso23.com</a><br>Or directly on their website.<br>Please provide this promocode to access preferential rates: <strong class="font-bold text-black">Marissa & Emmet</strong>.<br>The promotional code is valid for stays between 22 April and 24 April 2027.`,
     image: imgRosso23,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Rosso+23+Firenze",
   },
