@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import videoPoster from "../assets/savethedatenuovo-poster.png";
+import videoPoster from "../assets/savethedatenuovo-poster-clean.jpg";
 
 const router = useRouter();
 const videoRef = ref(null);
@@ -12,7 +12,6 @@ const startVideo = () => {
   if (hasStarted.value) return;
   
   if (videoRef.value) {
-    videoRef.value.load();
     const playPromise = videoRef.value.play();
     if (playPromise !== undefined) {
       playPromise.catch((e) => {
@@ -63,7 +62,7 @@ const goToRSVP = () => {
         :style="{ opacity: hasStarted ? 1 : 0, transition: 'opacity 50ms ease-out' }"
       >
         <source
-          src="../assets/savethedatenuovo.mp4#t=0.001"
+          src="../assets/savethedatenuovo.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -85,10 +84,9 @@ const goToRSVP = () => {
 <style lang="scss" scoped>
 .save-the-date-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100dvw;
-  height: 100dvh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background-color: #000;
   overflow: hidden;
   z-index: 100;
