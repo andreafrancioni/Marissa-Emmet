@@ -28,7 +28,7 @@ import logoImage from "../assets/solo_logo.png";
             <span class="text-[15px]">2027</span>
           </p>
           <p class="text-xs tracking-[0.2em] font-menu text-gray-400 uppercase">
-            Florence Italy
+            Florence, Italy
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import videoPoster from "../assets/savethedatenuovo-cover.png";
+import videoPoster from "../assets/savethedatenuovo-poster.png";
 
 const router = useRouter();
 const videoRef = ref(null);
@@ -45,13 +45,22 @@ const goToRSVP = () => {
 <template>
   <div class="save-the-date-container bg-black" @click="startVideo">
     <div class="video-wrapper" :class="{ 'is-playing': hasStarted }">
+      <img
+        :src="videoPoster"
+        alt=""
+        class="fullscreen-poster"
+        draggable="false"
+        :style="{ opacity: hasStarted ? 0 : 1, transition: 'opacity 50ms ease-out' }"
+      />
       <video
         ref="videoRef"
         class="fullscreen-video"
         playsinline
+        preload="auto"
         :poster="videoPoster"
         @timeupdate="onTimeUpdate"
         @ended="onVideoEnded"
+        :style="{ opacity: hasStarted ? 1 : 0, transition: 'opacity 50ms ease-out' }"
       >
         <source
           src="../assets/savethedatenuovo.mp4#t=0.001"
@@ -99,6 +108,16 @@ const goToRSVP = () => {
 }
 
 .fullscreen-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fullscreen-poster {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;

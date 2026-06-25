@@ -7,14 +7,15 @@ import brunchImage from "../assets/brunch.png";
 const days = [
   {
     day: 1,
-    date: "THURSDAY, APRIL 22, 2027",
+    date: "THURSDAY, APRIL 22<sup class=\"text-sm\">nd</sup>, 2027",
     events: [
       {
         title: "Welcome to Florence",
         time: "9:00 PM – Midnight",
         location:
           "Palazzo Gondi\nPiazza San Firenze 1–2\n50122 Florence, Italy",
-        locationUrl: "https://www.google.com/maps/search/?api=1&query=Palazzo+Gondi+Florence",
+        locationUrl:
+          "https://www.google.com/maps/search/?api=1&query=Palazzo+Gondi+Florence",
         description:
           "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance.",
       },
@@ -23,14 +24,15 @@ const days = [
   },
   {
     day: 2,
-    date: "FRIDAY, APRIL 23, 2027",
+    date: "FRIDAY, APRIL 23<sup class=\"text-sm\">rd</sup>, 2027",
     events: [
       {
         title: "Religious Ceremony",
         time: "4:00 PM",
         location:
           "Chiesa dei Santi Michele e Gaetano\nPiazza degli Antinori, 1\n50123 Florence, Italy",
-        locationUrl: "https://www.google.com/maps/search/?api=1&query=Chiesa+dei+Santi+Michele+e+Gaetano+Florence",
+        locationUrl:
+          "https://www.google.com/maps/search/?api=1&query=Chiesa+dei+Santi+Michele+e+Gaetano+Florence",
         description:
           "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nAttire: Black Tie Optional\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
       },
@@ -38,7 +40,8 @@ const days = [
         title: "Wedding Reception & After-Party",
         time: "From 6:00 PM onwards",
         location: "Villa Mangiacane",
-        locationUrl: "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
+        locationUrl:
+          "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
         description:
           "Cocktails, dinner, dancing, and festivities will follow at Villa Mangiacane.",
       },
@@ -47,16 +50,17 @@ const days = [
   },
   {
     day: 3,
-    date: "SATURDAY, APRIL 24, 2027",
+    date: "SATURDAY, APRIL 24<sup class=\"text-sm\">th</sup>, 2027",
     events: [
       {
         title: "Farewell Brunch",
         time: "11:30 AM - 2:30 PM",
         location:
           "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
-        locationUrl: "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
+        locationUrl:
+          "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
         description:
-          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\n* To ensure a seamless experience, complimentary transportation will be provided to and from the event venues. Detailed transfer schedules will be shared with guests closer to the wedding date.*\n\nAttire: Tuscany Resort Chic",
+          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\nAttire: Tuscany Resort Chic",
       },
     ],
     image: brunchImage,
@@ -122,7 +126,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="space-y-32">
+        <div class="">
           <div
             v-for="(day, index) in days"
             :key="index"
@@ -149,8 +153,8 @@ onUnmounted(() => {
                 <h4
                   class="text-2xl text-center font-title tracking-widest text-[#3D3D3D] mb-12"
                   :class="index % 2 === 0 ? 'md:text-right' : 'md:text-left'"
+                  v-html="day.date"
                 >
-                  {{ day.date }}
                 </h4>
 
                 <ul class="space-y-10">
@@ -230,6 +234,11 @@ onUnmounted(() => {
               </div>
             </div>
           </div>
+          <p class="text-center text-xl mb-4">
+            To ensure a seamless experience, complimentary transportation will
+            be provided to and from the event venues. Detailed transfer
+            schedules will be shared with guests closer to the wedding date.
+          </p>
         </div>
       </div>
     </div>
