@@ -508,7 +508,8 @@ const submitForm = async () => {
                       v-model="form.arrivalDate"
                       type="date"
                       min="2027-04-01"
-                      max="2027-04-31"
+                      max="2027-04-30"
+                      @focus="!form.arrivalDate && (form.arrivalDate = '2027-04-22')"
                       required
                       class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
@@ -522,7 +523,8 @@ const submitForm = async () => {
                       v-model="form.departureDate"
                       type="date"
                       min="2027-04-01"
-                      max="2027-04-31"
+                      max="2027-04-30"
+                      @focus="!form.departureDate && (form.departureDate = '2027-04-25')"
                       required
                       class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
                     />
