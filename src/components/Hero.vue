@@ -123,7 +123,7 @@ onUnmounted(() => {
         creating unforgettable memories together as we begin this next chapter
         in our lives. Thank you for being part of our story and for joining us
         in Florence to share in this unforgettable weekend.<br /><br />Con
-        Amore,<br />Marissa & Emmet
+        Amore,<br />Emmet & Marissa
       </p>
     </div>
   </section>
