@@ -36,7 +36,7 @@ const form = reactive({
   hotel: "",
   // Step 5: Events
   events: {
-    welcomeEvening: { status: "", guests: 1 },
+    welcomeDinner: { status: "", guests: 1 },
     weddingDay: { status: "", guests: 1 },
     farewellBrunch: { status: "", guests: 1 },
   },
@@ -135,25 +135,25 @@ const submitForm = async () => {
   try {
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
-      mode: "no-cors", // Needed for Google Apps Script
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charset=utf-8",
       },
       body: JSON.stringify(form),
     });
 
-    isSuccess.value = true;
-    setTimeout(() => {
-      router.push("/");
-    }, 4000);
+    const result = await response.json();
+
+    if (result.result === "success") {
+      isSuccess.value = true;
+      setTimeout(() => {
+        router.push("/");
+      }, 4000);
+    } else {
+      throw new Error("Errore restituito dallo script");
+    }
   } catch (error) {
     console.error("Submission error:", error);
-    // Even with no-cors, if it doesn't throw, we assume success or handle failure
-    // Google Apps Script usually returns an opaque response with no-cors
-    isSuccess.value = true;
-    setTimeout(() => {
-      router.push("/");
-    }, 4000);
+    errorMessage.value = "Si è verificato un errore durante l'invio. Riprova per favore.";
   } finally {
     isSubmitting.value = false;
   }
@@ -587,7 +587,7 @@ const submitForm = async () => {
                       <input
                         type="radio"
                         value="will_attend"
-                        v-model="form.events.welcomeEvening.status"
+                        v-model="form.events.welcomeDinner.status"
                         class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
@@ -601,7 +601,7 @@ const submitForm = async () => {
                       <input
                         type="radio"
                         value="not_attend"
-                        v-model="form.events.welcomeEvening.status"
+                        v-model="form.events.welcomeDinner.status"
                         class="peer h-4 w-4 appearance-none border border-gray-300 rounded-full checked:border-[#bda1c9] checked:border-[5px] transition-all"
                       />
                       <span
@@ -612,7 +612,7 @@ const submitForm = async () => {
                   </div>
 
                   <div
-                    v-if="form.events.welcomeEvening.status === 'will_attend'"
+                    v-if="form.events.welcomeDinner.status === 'will_attend'"
                     class="pt-2 animate-in fade-in duration-300"
                   >
                     <label
@@ -620,7 +620,7 @@ const submitForm = async () => {
                       >Number of attendees</label
                     >
                     <input
-                      v-model.number="form.events.welcomeEvening.guests"
+                      v-model.number="form.events.welcomeDinner.guests"
                       type="number"
                       min="1"
                       class="w-30 bg-transparent border-b border-gray-300 py-1 focus:outline-none focus:border-[#bda1c9] text-m font-light"
