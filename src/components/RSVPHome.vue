@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
-import stickersImg from "@/assets/stickers.png";
+import stickersImg from "@/assets/stickers.webp";
 
 const router = useRouter();
 

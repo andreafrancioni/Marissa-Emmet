@@ -1,9 +1,9 @@
 <script setup>
-import imgHelvetia from "@/assets/hotels/helvetia.jpg";
-import imgVecchietti from "@/assets/hotels/vecchietti.jpg";
+import imgHelvetia from "@/assets/hotels/helvetia.webp";
+import imgVecchietti from "@/assets/hotels/vecchietti.webp";
 import imgOrologio from "@/assets/hotels/orologio.webp";
-import imgSantaMaria from "@/assets/hotels/santamarianovella.jpg";
-import imgGaribaldi from "@/assets/hotels/garibaldiblu.jpg";
+import imgSantaMaria from "@/assets/hotels/santamarianovella.webp";
+import imgGaribaldi from "@/assets/hotels/garibaldiblu.webp";
 import imgRosso23 from "@/assets/hotels/rosso23.avif";
 
 const hotels = [

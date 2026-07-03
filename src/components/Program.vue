@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import welcomeImage from "../assets/welcome.png";
-import weddingImage from "../assets/wedding.png";
-import brunchImage from "../assets/brunch.png";
+import welcomeImage from "../assets/welcome.webp";
+import weddingImage from "../assets/wedding.webp";
+import brunchImage from "../assets/brunch.webp";
 
 const days = [
   {

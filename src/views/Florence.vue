@@ -1,5 +1,5 @@
 <script setup>
-import skylineImage from "../assets/Skyline firenze.PNG";
+import skylineImage from "../assets/Skyline firenze.webp";
 const sections = [
   {
     title: "Food, Drinks & Local Favorites",
