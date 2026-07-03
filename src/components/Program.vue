@@ -3,6 +3,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 import welcomeImage from "../assets/welcome.webp";
 import weddingImage from "../assets/wedding.webp";
 import brunchImage from "../assets/brunch.webp";
+import fioreImage from "../assets/fiore.png";
+
 
 const days = [
   {
@@ -121,7 +123,7 @@ onUnmounted(() => {
               class="absolute left-1/2 -ml-4 z-30 flex items-center justify-center bg-primary w-8 h-8 rounded-full"
               :style="{ top: `${sunProgress}%` }"
             >
-              <span class="text-2xl leading-none">☀️</span>
+              <img :src="fioreImage" alt="Sun indicator" class="w-12 h-12 object-contain" />
             </div>
           </div>
         </div>
