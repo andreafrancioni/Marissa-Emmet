@@ -19,7 +19,7 @@ const days = [
         locationUrl:
           "https://www.google.com/maps/search/?api=1&query=Palazzo+Gondi+Florence",
         description:
-          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance.",
+          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance",
       },
     ],
     image: welcomeImage,
@@ -36,7 +36,7 @@ const days = [
         locationUrl:
           "https://www.google.com/maps/search/?api=1&query=Chiesa+dei+Santi+Michele+e+Gaetano+Florence",
         description:
-          "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nAttire: Black Tie Optional\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
+          "We are honored to celebrate our marriage at the beautiful Church of Saints Michael and Gaetano, one of Florence's most treasured Baroque churches.\n\nFollowing the ceremony, guests are invited to continue the celebrations at Villa Mangiacane in the heart of the Tuscan countryside.\n\nAttire: Classical Formal\n\nTransportation will be provided from the church to Villa Mangiacane and, at the conclusion of the evening, from Villa Mangiacane back to guests' accommodations.",
       },
       {
         title: "Wedding Reception & After-Party",

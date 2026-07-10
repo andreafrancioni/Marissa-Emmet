@@ -31,6 +31,7 @@ const form = reactive({
   shippingCountry: "",
   shippingNotes: "",
   // Step 4: Travel & Accommodation
+  travelDetailsNotConfirmed: false,
   arrivalDate: "",
   departureDate: "",
   hotel: "",
@@ -103,7 +104,7 @@ const validateStep = () => {
     }
   }
   if (currentStep.value === 4) {
-    if (!form.arrivalDate || !form.departureDate || !form.hotel) {
+    if (!form.travelDetailsNotConfirmed && (!form.arrivalDate || !form.departureDate || !form.hotel)) {
       errorMessage.value = "Please fill in all required travel fields.";
       return false;
     }
@@ -492,65 +493,85 @@ const submitForm = async () => {
               v-if="currentStep === 4"
               class="space-y-6 animate-in fade-in duration-500"
             >
-              <div class="space-y-4">
-                <h4
-                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
-                >
-                  Travel Information
-                </h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
-                      >Arrival Date *</label
-                    >
+              <div class="space-y-4 mb-4">
+                <label class="flex items-start md:items-center space-x-3 cursor-pointer group">
+                  <div class="relative flex items-center justify-center mt-1 md:mt-0">
                     <input
-                      v-model="form.arrivalDate"
-                      type="date"
-                      min="2027-04-01"
-                      max="2027-04-30"
-                      @focus="!form.arrivalDate && (form.arrivalDate = '2027-04-22')"
-                      required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
+                      type="checkbox"
+                      v-model="form.travelDetailsNotConfirmed"
+                      class="peer h-5 w-5 appearance-none border border-gray-300 rounded-sm checked:bg-[#bda1c9] checked:border-[#bda1c9] transition-all cursor-pointer"
                     />
+                    <svg class="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
                   </div>
-                  <div class="space-y-2">
-                    <label
-                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
-                      >Departure Date *</label
-                    >
-                    <input
-                      v-model="form.departureDate"
-                      type="date"
-                      min="2027-04-01"
-                      max="2027-04-30"
-                      @focus="!form.departureDate && (form.departureDate = '2027-04-25')"
-                      required
-                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
-                    />
-                  </div>
-                </div>
+                  <span class="text-sm md:text-base text-gray-600 font-light italic group-hover:text-[#3D3B39] transition-colors leading-snug">
+                    My arrival, departure, and hotel details are not yet confirmed. I will provide this information later
+                  </span>
+                </label>
               </div>
 
-              <div class="space-y-4 pt-4">
-                <h4
-                  class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
-                >
-                  Accommodation
-                </h4>
-                <div class="space-y-2">
-                  <label
-                    class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
-                    >Kindly indicate the hotel where you will be staying
-                    *</label
+              <div v-if="!form.travelDetailsNotConfirmed" class="space-y-6 animate-in fade-in duration-500">
+                <div class="space-y-4">
+                  <h4
+                    class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
                   >
-                  <input
-                    v-model="form.hotel"
-                    type="text"
-                    required
-                    placeholder="Enter hotel name"
-                    class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
-                  />
+                    Travel Information
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                      <label
+                        class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
+                        >Arrival Date *</label
+                      >
+                      <input
+                        v-model="form.arrivalDate"
+                        type="date"
+                        min="2027-04-01"
+                        max="2027-04-30"
+                        @focus="!form.arrivalDate && (form.arrivalDate = '2027-04-22')"
+                        :required="!form.travelDetailsNotConfirmed"
+                        class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label
+                        class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
+                        >Departure Date *</label
+                      >
+                      <input
+                        v-model="form.departureDate"
+                        type="date"
+                        min="2027-04-01"
+                        max="2027-04-30"
+                        @focus="!form.departureDate && (form.departureDate = '2027-04-25')"
+                        :required="!form.travelDetailsNotConfirmed"
+                        class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors font-light"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4 pt-4">
+                  <h4
+                    class="text-xs font-menu text-[#3D3B39] uppercase tracking-widest border-b border-black/5 pb-2"
+                  >
+                    Accommodation
+                  </h4>
+                  <div class="space-y-2">
+                    <label
+                      class="block text-[9px] tracking-widest uppercase text-gray-400 font-menu"
+                      >Kindly indicate the hotel where you will be staying
+                      *</label
+                    >
+                    <input
+                      v-model="form.hotel"
+                      type="text"
+                      :required="!form.travelDetailsNotConfirmed"
+                      placeholder="Enter hotel name"
+                      class="w-full bg-transparent border-b border-gray-200 py-2 focus:outline-none focus:border-[#bda1c9] transition-colors placeholder:text-gray-200 font-light italic"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
