@@ -108,7 +108,7 @@ const faqs = [
           </p>`,
   },
   {
-    question: 'What do we mean by "Classical Formal" attire?',
+    question: 'What do we mean by "Classic Formal" attire?',
     answer: `<p>
             We kindly invite you to embrace a timeless and elegant style for our wedding celebration.
           </p>
