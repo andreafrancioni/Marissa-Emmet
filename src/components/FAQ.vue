@@ -107,6 +107,20 @@ const faqs = [
             wait to celebrate together!
           </p>`,
   },
+  {
+    question: 'What do we mean by "Classical Formal" attire?',
+    answer: `<p>
+            We kindly invite you to embrace a timeless and elegant style for our wedding celebration.
+          </p>
+          <p>
+            For ladies, a floor-length gown, an elegant midi dress would be perfect.
+For gentlemen, we recommend a well-tailored suit in classic tones, paired with a dress shirt and tie.
+          </p>
+          <p>
+           We kindly ask guests to avoid casual attire, including denim, sneakers, shorts, sportswear, and overly casual footwear.
+Thank you for helping us create an elegant and memorable atmosphere for this special day.
+          </p>`,
+  },
 ];
 </script>
 
