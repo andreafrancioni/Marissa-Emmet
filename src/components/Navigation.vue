@@ -7,6 +7,7 @@ const navLeft = [
   { name: "HOME", href: "/#welcome" },
   { name: "RSVP", href: "/#rsvp" },
   { name: "SCHEDULE OF EVENTS", href: "/#program" },
+  { name: "REGISTRY", href: "https://www.zola.com/registry/emmetandmarissa" },
 ];
 
 const navRight = [
@@ -17,6 +18,8 @@ const navRight = [
 ];
 
 const isMenuOpen = ref(false);
+
+const isExternal = (href) => href.startsWith("http://") || href.startsWith("https://");
 </script>
 
 <template>
@@ -26,14 +29,24 @@ const isMenuOpen = ref(false);
     <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
       <!-- Desktop Nav Left -->
       <div class="hidden lg:flex items-center justify-end space-x-8 flex-1">
-        <router-link
-          v-for="link in navLeft"
-          :key="link.name"
-          :to="link.href"
-          class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
-        >
-          {{ link.name }}
-        </router-link>
+        <template v-for="link in navLeft" :key="link.name">
+          <a
+            v-if="isExternal(link.href)"
+            :href="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
+          >
+            {{ link.name }}
+          </a>
+          <router-link
+            v-else
+            :to="link.href"
+            class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
+          >
+            {{ link.name }}
+          </router-link>
+        </template>
       </div>
 
       <!-- Center Logo -->
@@ -47,14 +60,24 @@ const isMenuOpen = ref(false);
       <div
         class="hidden lg:flex items-center justify-start space-x-8 flex-1 justify-end"
       >
-        <router-link
-          v-for="link in navRight"
-          :key="link.name"
-          :to="link.href"
-          class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
-        >
-          {{ link.name }}
-        </router-link>
+        <template v-for="link in navRight" :key="link.name">
+          <a
+            v-if="isExternal(link.href)"
+            :href="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
+          >
+            {{ link.name }}
+          </a>
+          <router-link
+            v-else
+            :to="link.href"
+            class="text-[10px] tracking-[0.2em] font-menu hover:text-gray-500 transition-colors uppercase"
+          >
+            {{ link.name }}
+          </router-link>
+        </template>
       </div>
 
       <!-- Mobile Button -->
@@ -123,15 +146,26 @@ const isMenuOpen = ref(false);
 
           <!-- Links -->
           <div class="flex flex-col items-center space-y-6 overflow-y-auto">
-            <router-link
-              v-for="link in [...navLeft, ...navRight]"
-              :key="link.name"
-              :to="link.href"
-              @click="isMenuOpen = false"
-              class="text-xl md:text-2xl tracking-[0.3em] font-menu uppercase hover:text-gray-500 transition-colors py-2"
-            >
-              {{ link.name }}
-            </router-link>
+            <template v-for="link in [...navLeft, ...navRight]" :key="link.name">
+              <a
+                v-if="isExternal(link.href)"
+                :href="link.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click="isMenuOpen = false"
+                class="text-xl md:text-2xl tracking-[0.3em] font-menu uppercase hover:text-gray-500 transition-colors py-2"
+              >
+                {{ link.name }}
+              </a>
+              <router-link
+                v-else
+                :to="link.href"
+                @click="isMenuOpen = false"
+                class="text-xl md:text-2xl tracking-[0.3em] font-menu uppercase hover:text-gray-500 transition-colors py-2"
+              >
+                {{ link.name }}
+              </router-link>
+            </template>
           </div>
 
           <!-- Decorative Element -->

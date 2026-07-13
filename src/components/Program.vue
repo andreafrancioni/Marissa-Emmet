@@ -19,7 +19,7 @@ const days = [
         locationUrl:
           "https://www.google.com/maps/search/?api=1&query=Palazzo+Gondi+Florence",
         description:
-          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine elegance",
+          "Join us for an evening at the magnificent Palazzo Gondi as we welcome family and friends to Florence and begin our wedding celebrations together.\n\nAttire: Florentine Elegance (Cocktail Attire)",
       },
     ],
     image: welcomeImage,

@@ -108,6 +108,18 @@ const faqs = [
           </p>`,
   },
   {
+    question: "What does “Florentine Elegance (Cocktail Attire)” mean?",
+    answer: `<p>
+            Think timeless Italian style with a touch of spring sophistication.
+          </p>
+          <p>
+            For ladies, elegant cocktail or midi dresses, chic jumpsuits or refined separates are perfect. For gentlemen, a tailored suit with a dress shirt is recommended; a tie is optional.
+          </p>
+          <p>
+           As April weather in Florence can be cool in the evening, we suggest bringing a light jacket or wrap. Since many streets are cobblestoned, block heels or elegant flats are also a great choice.
+          </p>`,
+  },
+  {
     question: 'What do we mean by "Classic Formal" attire?',
     answer: `<p>
             We kindly invite you to embrace a timeless and elegant style for our wedding celebration.
