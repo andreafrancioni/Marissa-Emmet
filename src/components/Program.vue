@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import welcomeImage from "../assets/welcome.webp";
 import weddingImage from "../assets/wedding.webp";
-import brunchImage from "../assets/brunch.webp";
+import brunchImage from "../assets/brunch.png";
 import fioreImage from "../assets/fiore.png";
 
 
@@ -56,7 +56,7 @@ const days = [
     events: [
       {
         title: "Farewell Brunch",
-        time: "11:30 AM - 2:30 PM",
+        time: "12:00 PM - 15:00 PM",
         location:
           "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
         locationUrl:
@@ -236,13 +236,14 @@ onUnmounted(() => {
               </div>
             </div>
           </div>
-          <p class="text-center text-xl mb-4">
-            To ensure a seamless experience, complimentary transportation will
-            be provided to and from the event venues. Detailed transfer
-            schedules will be shared with guests closer to the wedding date.
-          </p>
         </div>
       </div>
+
+      <p class="text-center text-xl mt-16 md:mt-24 mb-4">
+        To ensure a seamless experience, complimentary transportation will
+        be provided to and from the event venues. Detailed transfer
+        schedules will be shared with guests closer to the wedding date.
+      </p>
     </div>
   </section>
 </template>

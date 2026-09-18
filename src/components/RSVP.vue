@@ -714,7 +714,7 @@ const submitForm = async () => {
                 <div class="space-y-4 p-6 bg-black/5 rounded-sm">
                   <div>
                     <h5 class="text-base font-title text-[#3D3B39]">
-                      Farewell Poolside Brunch
+                      Farewell Brunch
                     </h5>
                     <p
                       class="text-[10px] text-gray-400 uppercase tracking-wider font-menu"
