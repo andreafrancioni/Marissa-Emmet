@@ -56,7 +56,7 @@ const days = [
     events: [
       {
         title: "Farewell Brunch",
-        time: "12:00 PM - 15:00 PM",
+        time: "12:00 PM - 3:00 PM",
         location:
           "Villa Mangiacane\nVia Faltignano,4\n50026 San Casciano in Val di Pesa, Italy",
         locationUrl:
