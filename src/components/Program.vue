@@ -62,7 +62,7 @@ const days = [
         locationUrl:
           "https://www.google.com/maps/search/?api=1&query=Villa+Mangiacane",
         description:
-          "Before we part ways, please join us for a fun and relaxed poolside brunch as we celebrate one final time together.\n\nAttire: Tuscany Resort Chic",
+          "Before we part ways, please join us for a fun and relaxed brunch in the garden as we celebrate one final time together.\n\nAttire: Tuscany Resort Chic",
       },
     ],
     image: brunchImage,
